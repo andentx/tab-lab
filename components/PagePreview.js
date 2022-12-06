@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const PagePreviewContainer = styled.div`
-  background-color: grey;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
   width: 100%;
+
+  margin-bottom: 2rem;
 `;
 
 const Page = styled.div`
