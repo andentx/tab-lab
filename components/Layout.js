@@ -17,7 +17,6 @@ const PageContainer = styled.div`
 
 const MainContent = styled.main`
   background-color: var(--main-section-background-color);
-  background-color: green;
   color: var(--text-color);
 
   width: 100%;
