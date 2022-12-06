@@ -20,6 +20,7 @@ const GlobalColor = createGlobalStyle`
 
     /* color assignments */
     --main-section-background-color: var(--site-background-color);
+    --title-color: var(--sunset-gold);
 
   }
 
