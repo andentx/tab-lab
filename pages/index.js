@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Title from '../components/Title';
 import PagePreview from '../components/PagePreview';
 import ButtonSection from '../components/ButtonSection';
