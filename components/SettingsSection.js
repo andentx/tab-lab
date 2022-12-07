@@ -8,11 +8,11 @@ const theme = createTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#ff0000', // color of outline and label when focused
+      main: 'hsl(34, 78%, 91%)', // color of outline and label when focused
     },
     text: {
-      primary: '#ffa500', // color of text inside of form when not focused
-      secondary: '#ffff00', // color of label text when not focused
+      primary: 'hsl(34, 78%, 91%)', // color of text inside of form when not focused
+      secondary: 'hsl(34, 78%, 91%)', // color of label text when not focused
     },
   },
 });
@@ -28,13 +28,53 @@ const SettingsSectionContainer = styled.div`
   margin-bottom: 15rem;
 
   .MuiOutlinedInput-notchedOutline {
-    border: 2px solid red; // color of notched outline when not focused
+    border: 2px solid hsl(34, 78%, 91%); // color of notched outline when not focused
     border-radius: 0;
   }
 
   .MuiNativeSelect-icon,
   .MuiSelect-icon {
-    fill: red;
+    fill: hsl(34, 78%, 91%);
+  }
+`;
+
+const MyCustomForm = styled.div`
+  /* background-color: darkred; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-height: 5rem;
+  width: 100%;
+
+  label {
+    background-color: var(--site-background-color);
+    color: var(--text-color);
+
+    /* background-color: orange; */
+
+    font-size: 0.75rem;
+    height: 1.5rem;
+
+    padding: 0 0.25rem;
+
+    margin-bottom: -1rem;
+    margin-left: 0.6rem;
+    z-index: 100;
+  }
+  select {
+    background-color: var(--site-background-color);
+    color: var(--text-color);
+
+    font-size: 1.2rem;
+
+    padding: 1rem;
+    padding-right: 1rem;
+
+    border: solid 2px var(--text-color);
+
+    width: 100%;
   }
 `;
 
@@ -47,66 +87,24 @@ const SettingsSection = () => {
           select
           fullWidth
           margin='normal'
-          label='Example 1'
+          label='String Number'
           value='Example 1'
           SelectProps={{
             native: true,
           }}
         >
           <option>Example 1 - MUI - TextField - Select - Native</option>
-        </TextField>
-        <TextField
-          id='example1'
-          select
-          fullWidth
-          margin='normal'
-          label='Example 1'
-          value='Example 1'
-          SelectProps={{
-            native: true,
-          }}
-        >
+          <option>Example 1 - MUI - TextField - Select - Native</option>
           <option>Example 1 - MUI - TextField - Select - Native</option>
         </TextField>
-        <TextField
-          id='example1'
-          select
-          fullWidth
-          margin='normal'
-          label='Example 1'
-          value='Example 1'
-          SelectProps={{
-            native: true,
-          }}
-        >
-          <option>Example 1 - MUI - TextField - Select - Native</option>
-        </TextField>
-        <TextField
-          id='example1'
-          select
-          fullWidth
-          margin='normal'
-          label='Example 1'
-          value='Example 1'
-          SelectProps={{
-            native: false,
-          }}
-        >
-          <option>Example 1 - MUI - TextField - Select - Native</option>
-        </TextField>
-        <TextField
-          id='example1'
-          select
-          fullWidth
-          margin='normal'
-          label='Example 1'
-          value='Example 1'
-          SelectProps={{
-            native: true,
-          }}
-        >
-          <option>Example 1 - MUI - TextField - Select - Native</option>
-        </TextField>
+        <MyCustomForm>
+          <label htmlFor='selectElement'>String Number</label>
+          <select id='selectElement'>
+            <option>Example 2 - Custom</option>
+            <option>Example 2 - Custom</option>
+            <option>Example 2 - Custom</option>
+          </select>
+        </MyCustomForm>
       </SettingsSectionContainer>
     </ThemeProvider>
   );
