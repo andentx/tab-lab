@@ -75,6 +75,18 @@ const MyCustomForm = styled.div`
     border: solid 2px var(--text-color);
 
     width: 100%;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  svg {
+    fill: var(--text-color);
+    align-self: flex-end;
+    margin-top: -36px;
+    margin-right: 20px;
+    height: 16px;
+    width: 16px;
   }
 `;
 
@@ -104,7 +116,18 @@ const SettingsSection = () => {
             <option>Example 2 - Custom</option>
             <option>Example 2 - Custom</option>
           </select>
+          <svg width='24' height='24' viewBox='0 0 24 24'>
+            <path d='M12 21l-12-18h24z' />
+          </svg>
         </MyCustomForm>
+        <div>
+          <label htmlFor='selectElement'>String Number</label>
+          <select id='selectElement'>
+            <option>Example 2 - Custom</option>
+            <option>Example 2 - Custom</option>
+            <option>Example 2 - Custom</option>
+          </select>
+        </div>
       </SettingsSectionContainer>
     </ThemeProvider>
   );
