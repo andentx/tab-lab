@@ -77,106 +77,102 @@ const SettingsSection = () => {
 
   return (
     <SettingsSectionContainer>
-      <form>
-        <input type='text' name='name' onChange={handleChange} />
-
-        <CustomSelect>
-          <label htmlFor='numberOfStrings'>Number of Strings</label>
-          <select id='numberOfStrings'>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-        <CustomSelect>
-          <label htmlFor='numberOfRows'>Number of Rows</label>
-          <select id='numberOfRows'>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-        <CustomSelect>
-          <label htmlFor='numberOfMeasureLines'>Number of Measure Lines</label>
-          <select id='numberOfMeasureLines'>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-        <CustomSelect>
-          <label htmlFor='offset'>Offset for 3-Ring Binder</label>
-          <select id='offset'>
-            <option>Offset for 3-Ring Binder</option>
-            <option>Centered</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-        <CustomSelect>
-          <label htmlFor='pageHeading'>Heading</label>
-          <select id='pageHeading'>
-            <option>None</option>
-            <option>Title</option>
-            <option>Title + BPM + Key</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-        <CustomSelect>
-          <label htmlFor='horizontalAdjust'>Horizontal Adjust</label>
-          <select id='horizontalAdjust'>
-            <option>100%</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-        <CustomSelect>
-          <label htmlFor='verticalAdjust'>Vertical Adjust</label>
-          <select id='verticalAdjust'>
-            <option>100%</option>
-          </select>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path d='M12 21l-12-18h24z' />
-          </svg>
-        </CustomSelect>
-      </form>
+      <CustomSelect>
+        <label htmlFor='numberOfStrings'>Number of Strings</label>
+        <select id='numberOfStrings'>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
+      <CustomSelect>
+        <label htmlFor='numberOfRows'>Number of Rows</label>
+        <select id='numberOfRows'>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
+      <CustomSelect>
+        <label htmlFor='numberOfMeasureLines'>Number of Measure Lines</label>
+        <select id='numberOfMeasureLines'>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
+      <CustomSelect>
+        <label htmlFor='offset'>Offset for 3-Ring Binder</label>
+        <select id='offset'>
+          <option>Offset for 3-Ring Binder</option>
+          <option>Centered</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
+      <CustomSelect>
+        <label htmlFor='pageHeading'>Heading</label>
+        <select id='pageHeading'>
+          <option>None</option>
+          <option>Title</option>
+          <option>Title + BPM + Key</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
+      <CustomSelect>
+        <label htmlFor='horizontalAdjust'>Horizontal Adjust</label>
+        <select id='horizontalAdjust'>
+          <option>100%</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
+      <CustomSelect>
+        <label htmlFor='verticalAdjust'>Vertical Adjust</label>
+        <select id='verticalAdjust'>
+          <option>100%</option>
+        </select>
+        <svg width='24' height='24' viewBox='0 0 24 24'>
+          <path d='M12 21l-12-18h24z' />
+        </svg>
+      </CustomSelect>
     </SettingsSectionContainer>
   );
 };
