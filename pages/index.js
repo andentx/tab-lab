@@ -2,9 +2,7 @@ import Head from 'next/head';
 
 import Layout from '../components/Layout';
 import Title from '../components/Title';
-import PagePreview from '../components/PagePreview';
-import ButtonSection from '../components/ButtonSection';
-import SettingsSection from '../components/SettingsSection';
+import PageGenerator from '../components/PageGenerator';
 
 export default function Home() {
   return (
@@ -16,9 +14,7 @@ export default function Home() {
       </Head>
 
       <Title />
-      <PagePreview />
-      <ButtonSection />
-      <SettingsSection />
+      <PageGenerator />
     </Layout>
   );
 }
