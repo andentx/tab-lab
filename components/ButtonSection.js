@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const ButtonSectionContainer = styled.div`
+  background-color: gold;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
