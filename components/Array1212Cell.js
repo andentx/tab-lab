@@ -10,16 +10,13 @@ const CellsContainer = styled.div`
   flex-wrap: wrap;
 
   width: 80%;
-  height: 200px;
+  aspect-ratio: 8/1;
   margin-bottom: 2rem;
 `;
 
 const Cell = styled.div`
-  background-color: limegreen;
-  border: 2px solid grey;
-
-  height: 50px;
-  width: 50px;
+  background-color: white;
+  border: 2px solid black;
 `;
 
 const FormSection = styled.div`
@@ -30,61 +27,30 @@ const FormSection = styled.div`
 `;
 
 function Array1212() {
-  let cellArray = [];
-
   const [cellHeight, setCellHeight] = useState(25);
   const [cellWidth, setCellWidth] = useState(12.5);
   const [numberOfRows, setNumberOfRows] = useState(4);
   const [numberOfColumns, setNumberOfColumns] = useState(8);
   const [arrayOfCellsInState, setArrayOfCellsInState] = useState([]);
 
-  function handleCellHeightChange(event) {
-    setCellHeight(event.target.value);
-  }
-  function handleCellWidthChange(event) {
-    setCellWidth(event.target.value);
-  }
   function handleNumberOfRowsChange(event) {
-    let selectedNumberOfRows = event.target.value;
-    let selectedNumberOfCols = numberOfColumns;
-
-    console.log(`selectedNumberOfRows = ${selectedNumberOfRows}`);
-    console.log(`selectedNumberOfCols = ${selectedNumberOfCols}`);
-
-    setNumberOfRows(selectedNumberOfRows);
+    setNumberOfRows(event.target.value);
   }
   function handleNumberOfColumnsChange(event) {
     setNumberOfColumns(event.target.value);
   }
 
   useEffect(() => {
-    let selectedNumberOfRows = numberOfRows;
-    let selectedNumberOfCols = numberOfColumns;
-
-    createArrayOfCells(selectedNumberOfRows, selectedNumberOfCols);
+    createArrayOfCells(numberOfRows, numberOfColumns);
 
     function createArrayOfCells(rows, cols) {
-      console.log('start of createArrayOfCells');
+      let calculatedCellHeight = 100 / rows;
+      let calculatedCellWidth = 100 / cols;
 
-      let currentNumberOfRowsFromState = numberOfRows;
-      console.log(`current number of rows from state is ${currentNumberOfRowsFromState}`);
+      setCellHeight(calculatedCellHeight);
+      setCellWidth(calculatedCellWidth);
 
-      let rowNum = rows;
-      let colNum = cols;
-
-      console.log(`rowNum is ${rowNum}`);
-      console.log(`colNum is ${colNum}`);
-
-      let theLetterH = 100 / rowNum;
-      let theLetterW = 100 / colNum;
-
-      console.log(`the letter H is ${theLetterH}`);
-      console.log(`the letter W is ${theLetterW}`);
-
-      setCellHeight(theLetterH);
-
-      let numberOfCellsThatShouldBeCreated = rowNum * colNum;
-      console.log(`numberOfCellsThatShouldBeCreated is ${numberOfCellsThatShouldBeCreated}`);
+      let numberOfCellsThatShouldBeCreated = rows * cols;
 
       let newArrayOfCells = [];
 
@@ -92,13 +58,9 @@ function Array1212() {
         newArrayOfCells.push({ label: i, value: i, key: i });
       }
 
-      console.log(newArrayOfCells);
-
       setArrayOfCellsInState(newArrayOfCells);
-
-      console.log('end of createArrayOfCells');
     }
-  }, [numberOfRows]);
+  }, [numberOfRows, numberOfColumns]);
 
   let allCellsRendered = arrayOfCellsInState.map((cell) => (
     <Cell
@@ -127,16 +89,6 @@ function Array1212() {
           <label>
             Enter the Number of Columns :
             <input type='number' value={numberOfColumns} onChange={handleNumberOfColumnsChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Cell Height:
-            <input type='number' value={cellHeight} onChange={handleCellHeightChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Cell Width:
-            <input type='number' value={cellWidth} onChange={handleCellWidthChange} />
           </label>
         </form>
       </FormSection>
