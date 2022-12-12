@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import Layout from '../components/Layout';
 import Title from '../components/Title';
-import TryWithArray from '../components/TryWithArray';
+import Array1212Cell from '../components/Array1212Cell';
 
 export default function Table() {
   return (
@@ -14,7 +14,7 @@ export default function Table() {
       </Head>
 
       <Title />
-      <TryWithArray />
+      <Array1212Cell />
     </Layout>
   );
 }
