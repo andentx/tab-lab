@@ -66,6 +66,10 @@ function Component1213() {
   const [numberOfCellContainers, setNumberOfCellContainers] = useState(6);
   const [arrayOfCellsInState, setArrayOfCellsInState] = useState([]);
   const [arrayOfCellContainersInState, setArrayOfCellContainersInState] = useState([]);
+  const [horizontalAdjust, setHorizontalAdjust] = useState(100);
+  const [leftSpacerSize, setLeftSpacerSize] = useState(10);
+  const [rightSpacerSize, setRightSpacerSize] = useState(10);
+  const [tabRowWidth, setTabRowWidth] = useState(80);
 
   function handleNumberOfRowsChange(event) {
     setNumberOfRows(event.target.value);
@@ -75,6 +79,27 @@ function Component1213() {
   }
   function handleNumberOfCellContainersChange(event) {
     setNumberOfCellContainers(event.target.value);
+  }
+  function handleHorizontalAdjustChange(event) {
+    console.log(`start of handleHorizontalAdjustChange`);
+    console.log('');
+    setHorizontalAdjust(event.target.value);
+
+    let adjustAmount = event.target.value - horizontalAdjust;
+    console.log(`adjustAmount is ${adjustAmount}`);
+
+    setTabRowWidth(event.target.value - 20);
+
+    setLeftSpacerSize(leftSpacerSize - adjustAmount);
+    setRightSpacerSize(rightSpacerSize - adjustAmount);
+    console.log(`horizontalAdjust is ${event.target.value}`);
+    console.log(`leftSpacerSize is ${leftSpacerSize - adjustAmount}`);
+    console.log(`rightSpacerSize is ${rightSpacerSize - adjustAmount}`);
+    console.log('');
+    console.log(`end of handleHorizontalAdjustChange`);
+    console.log('');
+    console.log('');
+    console.log('');
   }
 
   useEffect(() => {
@@ -131,7 +156,14 @@ function Component1213() {
   ));
 
   const allCellContainersRendered = arrayOfCellContainersInState.map((cellContainer) => (
-    <CellsContainer className='cellContainer' key={cellContainer.key} id={cellContainer['key']}>
+    <CellsContainer
+      className='cellContainer'
+      key={cellContainer.key}
+      style={{
+        width: `${tabRowWidth}%`,
+      }}
+      id={cellContainer['key']}
+    >
       {allCellsRendered}
     </CellsContainer>
   ));
@@ -157,6 +189,11 @@ function Component1213() {
           <label>
             Enter the Number of Cell Containers :
             <input type='number' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange} />
+          </label>
+          <br />
+          <label>
+            Enter the Horizontal Adjust :
+            <input type='number' value={horizontalAdjust} onChange={handleHorizontalAdjustChange} />
           </label>
         </form>
       </FormSection>
