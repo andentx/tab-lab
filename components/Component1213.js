@@ -15,7 +15,7 @@ const PagePreviewSection = styled.div`
 `;
 
 const Page = styled.div`
-  background-color: orange;
+  background-color: purple;
   color: black;
 
   border: 3px solid black;
@@ -39,8 +39,6 @@ const CellsContainer = styled.div`
   height: 10%;
   /* aspect-ratio: 8/1; */
 
-  margin-bottom: 3%;
-
   :first-of-type {
     margin-top: 10%;
   }
@@ -55,7 +53,7 @@ const FormSection = styled.div`
   padding-top: 2rem;
 
   background-color: orange;
-  width: 80%;
+  width: min(80%, 500px);
 `;
 
 function Component1213() {
@@ -67,9 +65,13 @@ function Component1213() {
   const [arrayOfCellsInState, setArrayOfCellsInState] = useState([]);
   const [arrayOfCellContainersInState, setArrayOfCellContainersInState] = useState([]);
   const [horizontalAdjust, setHorizontalAdjust] = useState(100);
-  const [leftSpacerSize, setLeftSpacerSize] = useState(10);
-  const [rightSpacerSize, setRightSpacerSize] = useState(10);
+  const [verticalAdjust, setVerticalAdjust] = useState(100);
+  const [gapBetweenTabRows, setGapBetweenTabRows] = useState(3);
+
   const [tabRowWidth, setTabRowWidth] = useState(80);
+  const [tabRowHeight, setTabRowHeight] = useState(10);
+
+  const [leftOffset, setLeftOffset] = useState(0);
 
   function handleNumberOfRowsChange(event) {
     setNumberOfRows(event.target.value);
@@ -81,25 +83,21 @@ function Component1213() {
     setNumberOfCellContainers(event.target.value);
   }
   function handleHorizontalAdjustChange(event) {
-    console.log(`start of handleHorizontalAdjustChange`);
-    console.log('');
     setHorizontalAdjust(event.target.value);
-
-    let adjustAmount = event.target.value - horizontalAdjust;
-    console.log(`adjustAmount is ${adjustAmount}`);
-
     setTabRowWidth(event.target.value - 20);
+  }
 
-    setLeftSpacerSize(leftSpacerSize - adjustAmount);
-    setRightSpacerSize(rightSpacerSize - adjustAmount);
-    console.log(`horizontalAdjust is ${event.target.value}`);
-    console.log(`leftSpacerSize is ${leftSpacerSize - adjustAmount}`);
-    console.log(`rightSpacerSize is ${rightSpacerSize - adjustAmount}`);
-    console.log('');
-    console.log(`end of handleHorizontalAdjustChange`);
-    console.log('');
-    console.log('');
-    console.log('');
+  function handleLeftOffsetChange(event) {
+    setLeftOffset(event.target.value);
+  }
+
+  function handleVerticalAdjustChange(event) {
+    setVerticalAdjust(event.target.value);
+    setTabRowHeight(event.target.value / 10);
+  }
+
+  function handleGapBetweenTabRowsChange(event) {
+    setGapBetweenTabRows(event.target.value);
   }
 
   useEffect(() => {
@@ -161,6 +159,9 @@ function Component1213() {
       key={cellContainer.key}
       style={{
         width: `${tabRowWidth}%`,
+        height: `${tabRowHeight}%`,
+        marginLeft: `${leftOffset}%`,
+        marginBottom: `${gapBetweenTabRows}%`,
       }}
       id={cellContainer['key']}
     >
@@ -194,6 +195,21 @@ function Component1213() {
           <label>
             Enter the Horizontal Adjust :
             <input type='number' value={horizontalAdjust} onChange={handleHorizontalAdjustChange} />
+          </label>
+          <br />
+          <label>
+            Enter the Vertical Adjust :
+            <input type='number' value={verticalAdjust} onChange={handleVerticalAdjustChange} />
+          </label>
+          <br />
+          <label>
+            Enter the Left Offset :
+            <input type='number' value={leftOffset} onChange={handleLeftOffsetChange} />
+          </label>
+          <br />
+          <label>
+            Enter the Gap Between Tab Rows :
+            <input type='number' value={gapBetweenTabRows} onChange={handleGapBetweenTabRowsChange} />
           </label>
         </form>
       </FormSection>
