@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const PagePreviewSection = styled.div`
-  background-color: darkred;
+  /* background-color: darkred; */
 
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ const PagePreviewSection = styled.div`
 `;
 
 const Page = styled.div`
-  background-color: purple;
+  background-color: white;
   color: black;
 
   border: 3px solid black;
@@ -28,8 +28,22 @@ const Page = styled.div`
   width: min(80%, 500px);
 `;
 
+const PageHeader = styled.div`
+  /* background-color: blue; */
+  width: 50%;
+  height: 10%;
+  margin-bottom: 3%;
+`;
+
+const PageHeaderContents = styled.div`
+  /* background-color: hotpink; */
+  border-bottom: 3px solid black;
+  width: 100%;
+  height: 100%;
+`;
+
 const CellsContainer = styled.div`
-  background-color: yellow;
+  /* background-color: yellow; */
 
   display: flex;
   justify-content: flex-start;
@@ -38,14 +52,10 @@ const CellsContainer = styled.div`
   width: 80%;
   height: 10%;
   /* aspect-ratio: 8/1; */
-
-  :first-of-type {
-    margin-top: 10%;
-  }
 `;
 
 const Cell = styled.div`
-  background-color: green;
+  /* background-color: green; */
   border: 2px solid black;
 `;
 
@@ -67,6 +77,9 @@ function Component1213() {
   const [horizontalAdjust, setHorizontalAdjust] = useState(100);
   const [verticalAdjust, setVerticalAdjust] = useState(100);
   const [gapBetweenTabRows, setGapBetweenTabRows] = useState(3);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [headerDisplayProperty, setHeaderDisplayProperty] = useState('flex');
+  const [headerHeight, setHeaderHeight] = useState(10);
 
   const [tabRowWidth, setTabRowWidth] = useState(80);
   const [tabRowHeight, setTabRowHeight] = useState(10);
@@ -98,6 +111,25 @@ function Component1213() {
 
   function handleGapBetweenTabRowsChange(event) {
     setGapBetweenTabRows(event.target.value);
+  }
+
+  function handleIsHeaderVisibleChange(event) {
+    console.log(`hello from handleIsHeaderVisibleChange`);
+    console.log(`isHeaderVisible is ${isHeaderVisible}`);
+    console.log(`headerDisplayProperty is ${headerDisplayProperty}`);
+
+    setIsHeaderVisible(!isHeaderVisible);
+
+    if (isHeaderVisible === true) {
+      setHeaderDisplayProperty('flex');
+    }
+    if (isHeaderVisible === false) {
+      setHeaderDisplayProperty('none');
+    }
+  }
+
+  function handleHeaderHeightChange(event) {
+    setHeaderHeight(event.target.value);
   }
 
   useEffect(() => {
@@ -172,7 +204,22 @@ function Component1213() {
   return (
     <>
       <PagePreviewSection>
-        <Page>{allCellContainersRendered}</Page>
+        <Page>
+          <PageHeader
+            style={{
+              height: `${headerHeight}%`,
+            }}
+          >
+            <PageHeaderContents
+              style={{
+                display: `${headerDisplayProperty}`,
+              }}
+            >
+              contents
+            </PageHeaderContents>
+          </PageHeader>
+          {allCellContainersRendered}
+        </Page>
       </PagePreviewSection>
 
       <FormSection>
@@ -210,6 +257,16 @@ function Component1213() {
           <label>
             Enter the Gap Between Tab Rows :
             <input type='number' value={gapBetweenTabRows} onChange={handleGapBetweenTabRowsChange} />
+          </label>
+          <br />
+          <label>
+            Show Header :
+            <input type='text' value={isHeaderVisible} onChange={handleIsHeaderVisibleChange} />
+          </label>
+          <br />
+          <label>
+            Header Height :
+            <input type='number' value={headerHeight} onChange={handleHeaderHeightChange} />
           </label>
         </form>
       </FormSection>
