@@ -29,8 +29,8 @@ const FormSection = styled.div`
 function Array1212() {
   const [cellHeight, setCellHeight] = useState();
   const [cellWidth, setCellWidth] = useState();
-  const [numberOfRows, setNumberOfRows] = useState(4);
-  const [numberOfColumns, setNumberOfColumns] = useState(8);
+  const [numberOfRows, setNumberOfRows] = useState(5);
+  const [numberOfColumns, setNumberOfColumns] = useState(1);
   const [numberOfCellContainers, setNumberOfCellContainers] = useState(6);
   const [arrayOfCellsInState, setArrayOfCellsInState] = useState([]);
   const [arrayOfCellContainersInState, setArrayOfCellContainersInState] = useState([]);
@@ -84,7 +84,7 @@ function Array1212() {
     }
   }, [numberOfCellContainers]);
 
-  let allCellsRendered = arrayOfCellsInState.map((cell) => (
+  const allCellsRendered = arrayOfCellsInState.map((cell) => (
     <Cell
       className='classsss'
       key={cell.key}
@@ -98,7 +98,7 @@ function Array1212() {
     </Cell>
   ));
 
-  let allCellContainersRendered = arrayOfCellContainersInState.map((cellContainer) => (
+  const allCellContainersRendered = arrayOfCellContainersInState.map((cellContainer) => (
     <CellsContainer className='cellContainer' key={cellContainer.key} id={cellContainer['key']}>
       {allCellsRendered}
     </CellsContainer>
