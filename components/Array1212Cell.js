@@ -27,17 +27,22 @@ const FormSection = styled.div`
 `;
 
 function Array1212() {
-  const [cellHeight, setCellHeight] = useState(25);
-  const [cellWidth, setCellWidth] = useState(12.5);
+  const [cellHeight, setCellHeight] = useState();
+  const [cellWidth, setCellWidth] = useState();
   const [numberOfRows, setNumberOfRows] = useState(4);
   const [numberOfColumns, setNumberOfColumns] = useState(8);
+  const [numberOfCellContainers, setNumberOfCellContainers] = useState(6);
   const [arrayOfCellsInState, setArrayOfCellsInState] = useState([]);
+  const [arrayOfCellContainersInState, setArrayOfCellContainersInState] = useState([]);
 
   function handleNumberOfRowsChange(event) {
     setNumberOfRows(event.target.value);
   }
   function handleNumberOfColumnsChange(event) {
     setNumberOfColumns(event.target.value);
+  }
+  function handleNumberOfCellContainersChange(event) {
+    setNumberOfCellContainers(event.target.value);
   }
 
   useEffect(() => {
@@ -62,6 +67,23 @@ function Array1212() {
     }
   }, [numberOfRows, numberOfColumns]);
 
+  useEffect(() => {
+    createArrayOfCellContainers(numberOfCellContainers);
+
+    function createArrayOfCellContainers(number) {
+      setNumberOfCellContainers(number);
+      let numberOfCellContainersThatShouldBeCreated = number;
+
+      let newArrayOfCellContainers = [];
+
+      for (var i = 0; i < numberOfCellContainersThatShouldBeCreated; i++) {
+        newArrayOfCellContainers.push({ label: i, value: i, key: i });
+      }
+
+      setArrayOfCellContainersInState(newArrayOfCellContainers);
+    }
+  }, [numberOfCellContainers]);
+
   let allCellsRendered = arrayOfCellsInState.map((cell) => (
     <Cell
       className='classsss'
@@ -76,9 +98,16 @@ function Array1212() {
     </Cell>
   ));
 
+  let allCellContainersRendered = arrayOfCellContainersInState.map((cellContainer) => (
+    <CellsContainer className='cellContainer' key={cellContainer.key} id={cellContainer['key']}>
+      {allCellsRendered}
+    </CellsContainer>
+  ));
+
   return (
     <>
-      <CellsContainer>{allCellsRendered}</CellsContainer>
+      {allCellContainersRendered}
+
       <FormSection>
         <form>
           <label>
@@ -89,6 +118,11 @@ function Array1212() {
           <label>
             Enter the Number of Columns :
             <input type='number' value={numberOfColumns} onChange={handleNumberOfColumnsChange} />
+          </label>
+          <br />
+          <label>
+            Enter the Number of Cell Containers :
+            <input type='number' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange} />
           </label>
         </form>
       </FormSection>
