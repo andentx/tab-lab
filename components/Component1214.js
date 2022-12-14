@@ -3,13 +3,16 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const PagePreviewSection = styled.div`
-  /* background-color: darkred; */
+  background-color: darkred;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
+  /* width: 100%; */
+  width: min(100vw, 1200px);
+  height: min(103vw, 647px);
+  /* height: 400px; */
 
   margin-bottom: 2rem;
 `;
@@ -24,15 +27,15 @@ const Page = styled.div`
   flex-direction: column;
   align-items: center;
 
-  aspect-ratio: 8.5/11;
-  width: min(80%, 500px);
+  width: min(80vw, 500px);
+  /* aspect-ratio: 8.5/11; */
+  flex-grow: 1;
+  height: 100%;
 `;
 
 const PageHeader = styled.div`
   /* background-color: blue; */
   width: 50%;
-  height: 10%;
-  margin-bottom: 14px;
 `;
 
 const PageHeaderContents = styled.div`
@@ -50,7 +53,6 @@ const CellsContainer = styled.div`
   flex-wrap: wrap;
 
   width: 80%;
-  height: 10%;
   /* aspect-ratio: 8/1; */
 `;
 
@@ -216,6 +218,7 @@ function Component1214() {
           <PageHeader
             style={{
               height: `${headerHeight}%`,
+              marginBottom: `${gapBetweenTabRows}%`,
             }}
           >
             <PageHeaderContents
