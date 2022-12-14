@@ -13,6 +13,15 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media print {
+    background-color: white;
+    color: black;
+    width: 8.5in;
+    min-width: 8.5in;
+    min-height: 11in;
+    height: 11in;
+  }
 `;
 
 const MainContent = styled.main`
@@ -27,6 +36,14 @@ const MainContent = styled.main`
   align-items: center;
 
   flex-grow: 1;
+
+  @media print {
+    background-color: white;
+    color: black;
+    width: 8.5in;
+    max-width: 8.5in;
+    height: 11in;
+  }
 `;
 
 const Layout = ({ children }) => {
