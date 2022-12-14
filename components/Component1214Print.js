@@ -17,12 +17,6 @@ const PagePreviewSection = styled.div`
   /* height: 400px; */
 
   margin-bottom: 2rem;
-
-  @media print {
-    width: 8.5in;
-    height: 11in;
-    margin: 0;
-  }
 `;
 
 const Page = styled.div`
@@ -39,13 +33,6 @@ const Page = styled.div`
   /* aspect-ratio: 8.5/11; */
   flex-grow: 1;
   height: 100%;
-
-  @media print {
-    width: 8.5in;
-    height: 11in;
-    margin: 0;
-    border: none;
-  }
 `;
 
 const PageHeader = styled.div`
@@ -82,12 +69,6 @@ const ButtonSection = styled.div`
   min-height: 100px;
 
   margin-bottom: 2rem;
-
-  @media print {
-    display: none;
-    margin: 0;
-    min-height: 0;
-  }
 `;
 
 const PrintButton = styled.button`
@@ -97,11 +78,6 @@ const PrintButton = styled.button`
   min-height: 50px;
 
   margin: 2rem;
-
-  @media print {
-    display: none;
-    margin: 0;
-  }
 `;
 const RTPButton = styled.button`
   background-color: orange;
@@ -110,11 +86,6 @@ const RTPButton = styled.button`
   min-height: 50px;
 
   margin: 2rem;
-
-  @media print {
-    display: none;
-    margin: 0;
-  }
 `;
 
 const FormSection = styled.div`
@@ -122,11 +93,6 @@ const FormSection = styled.div`
 
   background-color: orange;
   width: min(80%, 500px);
-
-  @media print {
-    display: none;
-    padding: 0;
-  }
 `;
 
 function Component1214Print() {
