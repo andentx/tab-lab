@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+import ReactToPrint from 'react-to-print';
 
 import styled from 'styled-components';
 
@@ -101,6 +103,19 @@ const PrintButton = styled.button`
     margin: 0;
   }
 `;
+const RTPButton = styled.button`
+  background-color: orange;
+
+  width: 4rem;
+  min-height: 50px;
+
+  margin: 2rem;
+
+  @media print {
+    display: none;
+    margin: 0;
+  }
+`;
 
 const FormSection = styled.div`
   padding-top: 2rem;
@@ -115,6 +130,8 @@ const FormSection = styled.div`
 `;
 
 function Component1214Print() {
+  let componentRef = useRef();
+
   const [cellHeight, setCellHeight] = useState();
   const [cellWidth, setCellWidth] = useState();
   const [numberOfRows, setNumberOfRows] = useState(5);
@@ -265,7 +282,7 @@ function Component1214Print() {
   return (
     <>
       <PagePreviewSection>
-        <Page>
+        <Page ref={(el) => (componentRef = el)}>
           <PageHeader
             style={{
               height: `${headerHeight}%`,
@@ -284,6 +301,7 @@ function Component1214Print() {
 
       <ButtonSection>
         <PrintButton onClick={handlePrintButtonClick}>Print</PrintButton>
+        <ReactToPrint trigger={() => <RTPButton>React to Print</RTPButton>} content={() => componentRef} />
       </ButtonSection>
 
       <FormSection>
