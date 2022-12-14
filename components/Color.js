@@ -29,6 +29,12 @@ const GlobalColor = createGlobalStyle`
     background-color: var(--site-background-color);
   }
 
+  @media print {
+    width: 8.5in;
+    height: 11in;
+    background-color: white;
+  }
+
  `;
 
 const Color = () => {
