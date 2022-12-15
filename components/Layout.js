@@ -15,12 +15,7 @@ const PageContainer = styled.div`
   align-items: center;
 
   @media print {
-    background-color: white;
-    color: black;
-    width: 8.5in;
-    min-width: 8.5in;
-    min-height: 11in;
-    height: 11in;
+    width: 100%;
   }
 `;
 
@@ -38,11 +33,7 @@ const MainContent = styled.main`
   flex-grow: 1;
 
   @media print {
-    background-color: white;
-    color: black;
-    width: 8.5in;
-    max-width: 8.5in;
-    height: 11in;
+    max-width: 100%;
   }
 `;
 
