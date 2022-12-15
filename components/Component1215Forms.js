@@ -160,7 +160,7 @@ const RTPButton = styled.button`
 const FormSection = styled.div`
   padding-top: 2rem;
 
-  background-color: orange;
+  /* background-color: orange; */
   width: min(80%, 500px);
 
   form {
@@ -169,13 +169,107 @@ const FormSection = styled.div`
     align-items: center;
 
     * {
-      border: solid black 1px;
+      /* border: solid black 1px; */
     }
   }
 
   @media print {
     display: none;
     padding: 0;
+  }
+`;
+
+const CustomSlider = styled.div`
+  width: 80%;
+  /* background-color: pink; */
+
+  input {
+    background-color: hotpink;
+    border: 0;
+    margin: 0;
+
+    width: 100%;
+  }
+  input[type='range'] {
+    width: 100%;
+    margin: 12.8px 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+  }
+  input[type='range']:focus {
+    outline: none;
+  }
+  input[type='range']::-webkit-slider-runnable-track {
+    background: #ffbf00;
+    border: 0.2px solid #010101;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    margin-top: -13px;
+    width: 16px;
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  input[type='range']:focus::-webkit-slider-runnable-track {
+    background: #ffc51a;
+  }
+  input[type='range']::-moz-range-track {
+    background: #ffbf00;
+    border: 0.2px solid #010101;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+  input[type='range']::-moz-range-thumb {
+    width: 16px;
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  input[type='range']::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 13.8px 0;
+    color: transparent;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+  input[type='range']::-ms-fill-lower {
+    background: #e6ac00;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+  }
+  input[type='range']::-ms-fill-upper {
+    background: #ffbf00;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+  }
+  input[type='range']::-ms-thumb {
+    width: 16px;
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 0px;
+    /*Needed to keep the Edge thumb centred*/
+  }
+  input[type='range']:focus::-ms-fill-lower {
+    background: #ffbf00;
+  }
+  input[type='range']:focus::-ms-fill-upper {
+    background: #ffc51a;
   }
 `;
 
@@ -385,6 +479,7 @@ function Component1215Forms() {
             list='steplist'
             style={{
               width: `80%`,
+              backgroundColor: 'transparent',
             }}
             onChange={handleSteplistValueChange}
           />
@@ -401,6 +496,24 @@ function Component1215Forms() {
           </datalist>
           <div>{steplistValue}</div>
           <br />
+          <CustomSlider>
+            <input type='range' min='0' max='100' step='12.5' defaultValue='25' list='steplist' onChange={handleSteplistValueChange} />
+            <datalist id='steplist'>
+              <option>0</option>
+              <option>12.5</option>
+              <option>25</option>
+              <option>37.5</option>
+              <option>50</option>
+              <option>62.5</option>
+              <option>75</option>
+              <option>87.5</option>
+              <option>100</option>
+            </datalist>
+            <div>{steplistValue}</div>
+          </CustomSlider>
+
+          <br />
+
           <label>
             Enter the Number of Strings:
             <input type='number' value={numberOfStrings} onChange={handleNumberOfStringsChange} />
