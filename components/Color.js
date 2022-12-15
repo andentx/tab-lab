@@ -31,17 +31,6 @@ const GlobalColor = createGlobalStyle`
 
   }
 
-  @media print {
-
-    html {
-      background-color: red;
-
-    }
-    body {
-      background-color: orange;
-    }
-
-  }
 
  `;
 

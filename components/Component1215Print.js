@@ -86,10 +86,13 @@ const Cell = styled.div`
 `;
 
 const ButtonSection = styled.div`
-  background-color: darkred;
-  width: min(80%, 500px);
+  /* background-color: gold; */
 
-  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: min(80%, 500px);
 
   margin-bottom: 2rem;
 
@@ -97,6 +100,33 @@ const ButtonSection = styled.div`
     display: none;
     margin: 0;
     min-height: 0;
+  }
+
+  button {
+    background-color: var(--aged-white);
+    color: black;
+
+    border: 3px solid black;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+
+    height: 3.5rem;
+    width: 12rem;
+
+    margin: 0 1rem 1rem 1rem;
+
+    @media print {
+      display: none;
+      margin: 0;
+      min-height: 0;
+    }
   }
 `;
 
@@ -311,7 +341,7 @@ function Component1215Print() {
 
       <ButtonSection>
         <PrintButton onClick={handlePrintButtonClick}>Print</PrintButton>
-        <ReactToPrint trigger={() => <RTPButton>React to Print</RTPButton>} content={() => componentRef} />
+        <ReactToPrint trigger={() => <RTPButton>RTP</RTPButton>} content={() => componentRef} />
       </ButtonSection>
 
       <FormSection>

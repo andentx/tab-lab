@@ -5,7 +5,7 @@ import Color from '../components/Color';
 import PageFooter from '../components/PageFooter';
 
 const PageContainer = styled.div`
-  background-color: gold;
+  /* background-color: gold; */
 
   min-height: 100vh;
   min-height: 100dvh;
