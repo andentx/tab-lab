@@ -488,59 +488,27 @@ function Component1216Forms() {
     </CellsContainer>
   ));
 
-  const horizontalAdjustOptions = [];
-  for (let i = 90; i <= 120; i++) {
-    horizontalAdjustOptions.push(
-      <option value={i} key={uuidv4()}>
-        {i}%
-      </option>
-    );
+  function createOptions(min, max) {
+    const options = [];
+    for (let i = min; i <= max; i++) {
+      options.push(
+        <option value={i} key={uuidv4()}>
+          {i}
+        </option>
+      );
+    }
+    return options;
   }
 
-  const verticalAdjustOptions = [];
-  for (let i = 90; i <= 120; i++) {
-    verticalAdjustOptions.push(
-      <option value={i} key={uuidv4()}>
-        {i}%
-      </option>
-    );
-  }
-
-  const horizontalOffsetOptions = [];
-  for (let i = -20; i <= 20; i++) {
-    horizontalOffsetOptions.push(
-      <option value={i} key={uuidv4()}>
-        {i}%
-      </option>
-    );
-  }
-
-  const rowGapAdjustOptions = [];
-  for (let i = 0; i <= 10; i++) {
-    rowGapAdjustOptions.push(
-      <option value={i} key={uuidv4()}>
-        {i}
-      </option>
-    );
-  }
-
-  const headerHeightOptions = [];
-  for (let i = 0; i <= 20; i++) {
-    headerHeightOptions.push(
-      <option value={i} key={uuidv4()}>
-        {i}
-      </option>
-    );
-  }
-
-  const borderSizeOptions = [];
-  for (let i = 1; i <= 5; i++) {
-    borderSizeOptions.push(
-      <option value={i} key={uuidv4()}>
-        {i}
-      </option>
-    );
-  }
+  const numberOfStringsOptions = createOptions(4, 12);
+  const numberOfColumnsOptions = createOptions(2, 12);
+  const numberOfRowsOptions = createOptions(0, 12);
+  const horizontalAdjustOptions = createOptions(90, 120);
+  const verticalAdjustOptions = createOptions(90, 120);
+  const rowGapAdjustOptions = createOptions(0, 10);
+  const headerHeightOptions = createOptions(0, 20);
+  const borderSizeOptions = createOptions(1, 5);
+  const horizontalOffsetOptions = createOptions(-15, 20);
 
   return (
     <>
@@ -572,15 +540,7 @@ function Component1216Forms() {
           <CustomSelect>
             <label htmlFor='numberOfStrings'>Number of Strings</label>
             <select id='numberOfStrings' value={numberOfStrings} onChange={handleNumberOfStringsChange}>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='1'>10</option>
-              <option value='1'>11</option>
-              <option value='1'>12</option>
+              {numberOfStringsOptions}
             </select>
             <svg width='24' height='24' viewBox='0 0 24 24'>
               <path d='M12 21l-12-18h24z' />
@@ -591,17 +551,7 @@ function Component1216Forms() {
             <label htmlFor='numberOfMeasureLines'>Frets / Measures</label>
             <select id='numberOfMeasureLines' value={numberOfColumns} onChange={handleNumberOfColumnsChange}>
               <option value={1}>None</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-              <option value='11'>11</option>
-              <option value='12'>12</option>
+              {numberOfColumnsOptions}
             </select>
             <svg width='24' height='24' viewBox='0 0 24 24'>
               <path d='M12 21l-12-18h24z' />
@@ -611,19 +561,7 @@ function Component1216Forms() {
           <CustomSelect>
             <label htmlFor='numberOfRows'>Number of Rows</label>
             <select id='numberOfRows' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange}>
-              <option value='0'>0</option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-              <option value='11'>11</option>
-              <option value='12'>12</option>
+              {numberOfRowsOptions}
             </select>
             <svg width='24' height='24' viewBox='0 0 24 24'>
               <path d='M12 21l-12-18h24z' />
