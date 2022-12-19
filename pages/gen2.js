@@ -3,8 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 
-import Gen2PagePreview from '../components/Gen2PagePreview';
-import Gen2FormSection from '../components/Gen2FormSection';
+import Gen2PageGenerator from '../components/Gen2PageGenerator';
 
 export default function Table() {
   return (
@@ -16,8 +15,7 @@ export default function Table() {
       </Head>
 
       <Title />
-      <Gen2PagePreview></Gen2PagePreview>
-      <Gen2FormSection></Gen2FormSection>
+      <Gen2PageGenerator />
     </Layout>
   );
 }
