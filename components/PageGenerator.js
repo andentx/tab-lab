@@ -2,36 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import ReactToPrint from 'react-to-print';
 
+import PagePreviewSection from './PagePreviewSection';
 import CustomSelect from './CustomSelect';
 
 import { v4 as uuidv4 } from 'uuid';
 
 import styled from 'styled-components';
-
-const PagePreviewSection = styled.div`
-  /* background-color: darkred; */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* width: 100%; */
-  width: min(100vw, 1200px);
-  height: min(103vw, 647px);
-  /* height: 400px; */
-
-  margin-bottom: 2rem;
-
-  @media print {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    margin: auto;
-  }
-`;
 
 const Page = styled.div`
   background-color: white;
@@ -180,100 +156,6 @@ const FormSection = styled.div`
   @media print {
     display: none;
     padding: 0;
-  }
-`;
-
-const CustomSlider = styled.div`
-  width: 80%;
-  /* background-color: pink; */
-
-  input {
-    background-color: hotpink;
-    border: 0;
-    margin: 0;
-
-    width: 100%;
-  }
-  input[type='range'] {
-    width: 100%;
-    margin: 12.8px 0;
-    background-color: transparent;
-    -webkit-appearance: none;
-  }
-  input[type='range']:focus {
-    outline: none;
-  }
-  input[type='range']::-webkit-slider-runnable-track {
-    background: #ffbf00;
-    border: 0.2px solid #010101;
-    border-radius: 1.3px;
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-  }
-  input[type='range']::-webkit-slider-thumb {
-    margin-top: -13px;
-    width: 16px;
-    height: 34px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    cursor: pointer;
-    -webkit-appearance: none;
-  }
-  input[type='range']:focus::-webkit-slider-runnable-track {
-    background: #ffc51a;
-  }
-  input[type='range']::-moz-range-track {
-    background: #ffbf00;
-    border: 0.2px solid #010101;
-    border-radius: 1.3px;
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-  }
-  input[type='range']::-moz-range-thumb {
-    width: 16px;
-    height: 34px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  input[type='range']::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    border-width: 13.8px 0;
-    color: transparent;
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-  }
-  input[type='range']::-ms-fill-lower {
-    background: #e6ac00;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-  }
-  input[type='range']::-ms-fill-upper {
-    background: #ffbf00;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-  }
-  input[type='range']::-ms-thumb {
-    width: 16px;
-    height: 34px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: 0px;
-    /*Needed to keep the Edge thumb centred*/
-  }
-  input[type='range']:focus::-ms-fill-lower {
-    background: #ffbf00;
-  }
-  input[type='range']:focus::-ms-fill-upper {
-    background: #ffc51a;
   }
 `;
 
