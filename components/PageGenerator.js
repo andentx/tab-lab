@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import ReactToPrint from 'react-to-print';
 
+import CustomSelect from './CustomSelect';
+
 import { v4 as uuidv4 } from 'uuid';
 
 import styled from 'styled-components';
@@ -275,58 +277,6 @@ const CustomSlider = styled.div`
   }
 `;
 
-const CustomSelect = styled.div`
-  /* background-color: darkred; */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  min-height: 5rem;
-  width: 100%;
-
-  label {
-    background-color: var(--site-background-color);
-    color: var(--text-color);
-
-    /* background-color: orange; */
-
-    font-size: 0.75rem;
-    height: 1.5rem;
-
-    padding: 0 0.25rem;
-
-    margin-bottom: -1rem;
-    margin-left: 0.6rem;
-    z-index: 100;
-  }
-  select {
-    background-color: var(--site-background-color);
-    color: var(--text-color);
-
-    font-size: 1.2rem;
-
-    padding: 1rem;
-    padding-right: 1rem;
-
-    border: solid 2px var(--text-color);
-
-    width: 100%;
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  svg {
-    fill: var(--text-color);
-    align-self: flex-end;
-    margin-top: -36px;
-    margin-right: 20px;
-    height: 16px;
-    width: 16px;
-  }
-`;
-
 function Component1216Forms() {
   let componentRef = useRef();
 
@@ -542,9 +492,6 @@ function Component1216Forms() {
             <select id='numberOfStrings' value={numberOfStrings} onChange={handleNumberOfStringsChange}>
               {numberOfStringsOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -553,9 +500,6 @@ function Component1216Forms() {
               <option value={1}>None</option>
               {numberOfColumnsOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -563,9 +507,6 @@ function Component1216Forms() {
             <select id='numberOfRows' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange}>
               {numberOfRowsOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -573,9 +514,6 @@ function Component1216Forms() {
             <select id='horizontalAdjust' value={horizontalAdjust} onChange={handleHorizontalAdjustChange}>
               {horizontalAdjustOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -583,9 +521,6 @@ function Component1216Forms() {
             <select id='verticalAdjust' value={verticalAdjust} onChange={handleVerticalAdjustChange}>
               {verticalAdjustOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -593,9 +528,6 @@ function Component1216Forms() {
             <select id='leftOffset' value={leftOffset} onChange={handleLeftOffsetChange}>
               {horizontalOffsetOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -603,9 +535,6 @@ function Component1216Forms() {
             <select id='gapBetweenTabRows' value={gapBetweenTabRows} onChange={handleGapBetweenTabRowsChange}>
               {rowGapAdjustOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -614,9 +543,6 @@ function Component1216Forms() {
               <option value='true'>Show</option>
               <option value='false'>Hide</option>
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -624,9 +550,6 @@ function Component1216Forms() {
             <select id='headerHeightSelect' value={headerHeight} onChange={handleHeaderHeightChange}>
               {headerHeightOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
 
           <CustomSelect>
@@ -634,9 +557,6 @@ function Component1216Forms() {
             <select id='borderSizeSelect' value={borderSize} onChange={handleBorderSizeChange}>
               {borderSizeOptions}
             </select>
-            <svg width='24' height='24' viewBox='0 0 24 24'>
-              <path d='M12 21l-12-18h24z' />
-            </svg>
           </CustomSelect>
         </form>
       </FormSection>
