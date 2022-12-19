@@ -2,32 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import ReactToPrint from 'react-to-print';
 
+import PagePreviewSection from './PagePreviewSection';
+import CustomSelect from '../CustomSelect';
+
+import { v4 as uuidv4 } from 'uuid';
+
 import styled from 'styled-components';
-
-const PagePreviewSection = styled.div`
-  /* background-color: darkred; */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* width: 100%; */
-  width: min(100vw, 1200px);
-  height: min(103vw, 647px);
-  /* height: 400px; */
-
-  margin-bottom: 2rem;
-
-  @media print {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    margin: auto;
-  }
-`;
 
 const Page = styled.div`
   background-color: white;
@@ -179,101 +159,7 @@ const FormSection = styled.div`
   }
 `;
 
-const CustomSlider = styled.div`
-  width: 80%;
-  /* background-color: pink; */
-
-  input {
-    background-color: hotpink;
-    border: 0;
-    margin: 0;
-
-    width: 100%;
-  }
-  input[type='range'] {
-    width: 100%;
-    margin: 12.8px 0;
-    background-color: transparent;
-    -webkit-appearance: none;
-  }
-  input[type='range']:focus {
-    outline: none;
-  }
-  input[type='range']::-webkit-slider-runnable-track {
-    background: #ffbf00;
-    border: 0.2px solid #010101;
-    border-radius: 1.3px;
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-  }
-  input[type='range']::-webkit-slider-thumb {
-    margin-top: -13px;
-    width: 16px;
-    height: 34px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    cursor: pointer;
-    -webkit-appearance: none;
-  }
-  input[type='range']:focus::-webkit-slider-runnable-track {
-    background: #ffc51a;
-  }
-  input[type='range']::-moz-range-track {
-    background: #ffbf00;
-    border: 0.2px solid #010101;
-    border-radius: 1.3px;
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-  }
-  input[type='range']::-moz-range-thumb {
-    width: 16px;
-    height: 34px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  input[type='range']::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    border-width: 13.8px 0;
-    color: transparent;
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-  }
-  input[type='range']::-ms-fill-lower {
-    background: #e6ac00;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-  }
-  input[type='range']::-ms-fill-upper {
-    background: #ffbf00;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-  }
-  input[type='range']::-ms-thumb {
-    width: 16px;
-    height: 34px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: 0px;
-    /*Needed to keep the Edge thumb centred*/
-  }
-  input[type='range']:focus::-ms-fill-lower {
-    background: #ffbf00;
-  }
-  input[type='range']:focus::-ms-fill-upper {
-    background: #ffc51a;
-  }
-`;
-
-function Component1215Forms() {
+function Component1216Forms() {
   let componentRef = useRef();
 
   const [cellHeight, setCellHeight] = useState();
@@ -286,7 +172,7 @@ function Component1215Forms() {
   const [arrayOfCellContainersInState, setArrayOfCellContainersInState] = useState([]);
   const [horizontalAdjust, setHorizontalAdjust] = useState(100);
   const [verticalAdjust, setVerticalAdjust] = useState(100);
-  const [gapBetweenTabRows, setGapBetweenTabRows] = useState(3);
+  const [gapBetweenTabRows, setGapBetweenTabRows] = useState(5);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [headerDisplayProperty, setHeaderDisplayProperty] = useState('flex');
   const [headerHeight, setHeaderHeight] = useState(10);
@@ -345,16 +231,12 @@ function Component1215Forms() {
   }
 
   function handleIsHeaderVisibleChange(event) {
-    console.log(`hello from handleIsHeaderVisibleChange`);
-    console.log(`isHeaderVisible is ${isHeaderVisible}`);
-    console.log(`headerDisplayProperty is ${headerDisplayProperty}`);
+    setIsHeaderVisible(event.target.value);
 
-    setIsHeaderVisible(!isHeaderVisible);
-
-    if (isHeaderVisible === true) {
+    if (event.target.value == 'true') {
       setHeaderDisplayProperty('flex');
     }
-    if (isHeaderVisible === false) {
+    if (event.target.value == 'false') {
       setHeaderDisplayProperty('none');
     }
   }
@@ -438,6 +320,28 @@ function Component1215Forms() {
     </CellsContainer>
   ));
 
+  function createOptions(min, max) {
+    const options = [];
+    for (let i = min; i <= max; i++) {
+      options.push(
+        <option value={i} key={uuidv4()}>
+          {i}
+        </option>
+      );
+    }
+    return options;
+  }
+
+  const numberOfStringsOptions = createOptions(4, 12);
+  const numberOfColumnsOptions = createOptions(2, 12);
+  const numberOfRowsOptions = createOptions(0, 12);
+  const horizontalAdjustOptions = createOptions(90, 120);
+  const verticalAdjustOptions = createOptions(90, 120);
+  const rowGapAdjustOptions = createOptions(0, 10);
+  const headerHeightOptions = createOptions(0, 20);
+  const borderSizeOptions = createOptions(1, 5);
+  const horizontalOffsetOptions = createOptions(-15, 20);
+
   return (
     <>
       <PagePreviewSection>
@@ -459,114 +363,87 @@ function Component1215Forms() {
       </PagePreviewSection>
 
       <ButtonSection>
-        <PrintButton onClick={handlePrintButtonClick}>Print</PrintButton>
-        <ReactToPrint trigger={() => <RTPButton>RTP</RTPButton>} content={() => componentRef} />
+        {/* <PrintButton onClick={handlePrintButtonClick}>Print</PrintButton> */}
+        <ReactToPrint trigger={() => <RTPButton>Print</RTPButton>} content={() => componentRef} />
       </ButtonSection>
 
       <FormSection>
         <form>
-          <label>
-            Enter the Number of Strings:
-            <input type='number' value={numberOfStrings} onChange={handleNumberOfStringsChange} />
-          </label>
-          <br />
-          <input
-            type='range'
-            min='0'
-            max='100'
-            step='12.5'
-            defaultValue='25'
-            list='steplist'
-            style={{
-              width: `80%`,
-              backgroundColor: 'transparent',
-            }}
-            onChange={handleSteplistValueChange}
-          />
-          <datalist id='steplist'>
-            <option>0</option>
-            <option>12.5</option>
-            <option>25</option>
-            <option>37.5</option>
-            <option>50</option>
-            <option>62.5</option>
-            <option>75</option>
-            <option>87.5</option>
-            <option>100</option>
-          </datalist>
-          <div>{steplistValue}</div>
-          <br />
-          <CustomSlider>
-            <input type='range' min='0' max='100' step='12.5' defaultValue='25' list='steplist' onChange={handleSteplistValueChange} />
-            <datalist id='steplist'>
-              <option>0</option>
-              <option>12.5</option>
-              <option>25</option>
-              <option>37.5</option>
-              <option>50</option>
-              <option>62.5</option>
-              <option>75</option>
-              <option>87.5</option>
-              <option>100</option>
-            </datalist>
-            <div>{steplistValue}</div>
-          </CustomSlider>
+          <CustomSelect>
+            <label htmlFor='numberOfStrings'>Number of Strings</label>
+            <select id='numberOfStrings' value={numberOfStrings} onChange={handleNumberOfStringsChange}>
+              {numberOfStringsOptions}
+            </select>
+          </CustomSelect>
 
-          <br />
+          <CustomSelect>
+            <label htmlFor='numberOfMeasureLines'>Frets / Measures</label>
+            <select id='numberOfMeasureLines' value={numberOfColumns} onChange={handleNumberOfColumnsChange}>
+              <option value={1}>None</option>
+              {numberOfColumnsOptions}
+            </select>
+          </CustomSelect>
 
-          <label>
-            Enter the Number of Strings:
-            <input type='number' value={numberOfStrings} onChange={handleNumberOfStringsChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Number of Columns :
-            <input type='number' value={numberOfColumns} onChange={handleNumberOfColumnsChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Number of Cell Containers :
-            <input type='number' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Horizontal Adjust :
-            <input type='number' value={horizontalAdjust} onChange={handleHorizontalAdjustChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Vertical Adjust :
-            <input type='number' value={verticalAdjust} onChange={handleVerticalAdjustChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Left Offset :
-            <input type='number' value={leftOffset} onChange={handleLeftOffsetChange} />
-          </label>
-          <br />
-          <label>
-            Enter the Gap Between Tab Rows :
-            <input type='number' value={gapBetweenTabRows} onChange={handleGapBetweenTabRowsChange} />
-          </label>
-          <br />
-          <label>
-            Show Header :
-            <input type='text' value={isHeaderVisible} onChange={handleIsHeaderVisibleChange} />
-          </label>
-          <br />
-          <label>
-            Header Height :
-            <input type='number' value={headerHeight} onChange={handleHeaderHeightChange} />
-          </label>
-          <br />
-          <label>
-            Enter Border Size :
-            <input type='number' value={borderSize} onChange={handleBorderSizeChange} />
-          </label>
+          <CustomSelect>
+            <label htmlFor='numberOfRows'>Number of Rows</label>
+            <select id='numberOfRows' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange}>
+              {numberOfRowsOptions}
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='horizontalAdjust'>Adjust Horizontal Scale</label>
+            <select id='horizontalAdjust' value={horizontalAdjust} onChange={handleHorizontalAdjustChange}>
+              {horizontalAdjustOptions}
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='verticalAdjust'>Adjust Vertical Scale</label>
+            <select id='verticalAdjust' value={verticalAdjust} onChange={handleVerticalAdjustChange}>
+              {verticalAdjustOptions}
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='leftOffset'>Adjust Horizontal Offset</label>
+            <select id='leftOffset' value={leftOffset} onChange={handleLeftOffsetChange}>
+              {horizontalOffsetOptions}
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='leftOffset'>Adjust Space Between Rows</label>
+            <select id='gapBetweenTabRows' value={gapBetweenTabRows} onChange={handleGapBetweenTabRowsChange}>
+              {rowGapAdjustOptions}
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='pageHeaderSelect'>Page Header</label>
+            <select id='pageHeaderSelect' value={isHeaderVisible} onChange={handleIsHeaderVisibleChange}>
+              <option value='true'>Show</option>
+              <option value='false'>Hide</option>
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='headerHeightSelect'>Page Header Height</label>
+            <select id='headerHeightSelect' value={headerHeight} onChange={handleHeaderHeightChange}>
+              {headerHeightOptions}
+            </select>
+          </CustomSelect>
+
+          <CustomSelect>
+            <label htmlFor='borderSizeSelect'>Adjust Line Size</label>
+            <select id='borderSizeSelect' value={borderSize} onChange={handleBorderSizeChange}>
+              {borderSizeOptions}
+            </select>
+          </CustomSelect>
         </form>
       </FormSection>
     </>
   );
 }
 
-export default Component1215Forms;
+export default Component1216Forms;
