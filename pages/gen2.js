@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 
-import PageGenerator2Context from '../components/PageGenerator2Context';
+import Gen2PagePreview from '../components/Gen2PagePreview';
+import Gen2FormSection from '../components/Gen2FormSection';
 
 export default function Table() {
   return (
@@ -13,8 +14,10 @@ export default function Table() {
         <meta name='description' content='tab lab - development' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <Title />
-      <PageGenerator2Context />\
+      <Gen2PagePreview></Gen2PagePreview>
+      <Gen2FormSection></Gen2FormSection>
     </Layout>
   );
 }
