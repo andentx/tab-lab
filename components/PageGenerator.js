@@ -59,10 +59,6 @@ const PageGenerator = () => {
   }
 
   function createCells(rows, cols) {
-    console.log(`function createCells Started`);
-    console.log(`passed in rows is ${rows}`);
-    console.log(`passed in cols is ${cols}`);
-
     setPageSettings((previousSettings) => ({
       ...previousSettings,
       cellHeight: 100 / rows,
@@ -70,43 +66,28 @@ const PageGenerator = () => {
     }));
     let newCells = [];
     for (var i = 0; i < rows * cols; i++) {
-      // console.log(`newCells i:${i}`);
-
       newCells.push({ label: i, value: i, key: i });
     }
     setCells(newCells);
   }
 
   function createCellContainers(number) {
-    console.log(`function createCellContainers Started`);
-    console.log(``);
-    console.log(``);
-    console.log(`createCellContainers passed in number is ${number}`);
-    console.log(``);
-    console.log(``);
-
     setPageSettings((previousSettings) => ({
       ...previousSettings,
       numberOfCellContainers: number,
     }));
     let newCellContainers = [];
     for (var i = 0; i < number; i++) {
-      console.log(`newCellContainers i:${i}`);
-
       newCellContainers.push({ label: i, value: i, key: i });
     }
     setCellContainers(newCellContainers);
   }
 
   useEffect(() => {
-    console.log(`useEffect createCellContainers Started`);
     createCellContainers(pageSettings.numberOfCellContainers);
   }, [pageSettings.numberOfCellContainers]);
 
   useEffect(() => {
-    console.log(`useEffect createCells Started`);
-    console.log(`pageSettings.numberOfStrings: ${pageSettings.numberOfStrings}`);
-    console.log(`pageSettings.numberOfVerticalLines: ${pageSettings.numberOfVerticalLines}`);
     createCells(pageSettings.numberOfStrings, pageSettings.numberOfVerticalLines);
   }, [pageSettings.numberOfStrings, pageSettings.numberOfVerticalLines]);
 

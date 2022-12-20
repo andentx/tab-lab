@@ -21,7 +21,6 @@ const Page = styled.div`
 `;
 
 const Gen2PagePreview = ({ pageSettings, allCellContainersRendered }) => {
-  console.log(allCellContainersRendered);
   return <Page>{allCellContainersRendered}</Page>;
 };
 
