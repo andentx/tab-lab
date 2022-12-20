@@ -10,6 +10,9 @@ const Page = styled.div`
   width: min(80%, 500px);
   aspect-ratio: 8.5/11;
 
+  width: 800px;
+  height: 1100px;
+
   padding: 1rem;
 
   display: flex;
@@ -18,6 +21,7 @@ const Page = styled.div`
 `;
 
 const Gen2PagePreview = ({ pageSettings, allCellContainersRendered }) => {
+  console.log(allCellContainersRendered);
   return <Page>{allCellContainersRendered}</Page>;
 };
 

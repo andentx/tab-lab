@@ -26,9 +26,6 @@ const CellsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-
-  width: 80%;
-  height: 10%;
 `;
 
 const Cell = styled.div`
@@ -37,11 +34,13 @@ const Cell = styled.div`
 
 const PageGenerator = () => {
   const [pageSettings, setPageSettings] = useState({
-    numberOfStrings: 6, // duplicate?
-    numberOfVerticalLines: 8, // duplicate?
-    numberOfColumns: 8, // duplicate?
-    numberOfRows: 6, // duplicate?
+    numberOfStrings: 6,
+    numberOfVerticalLines: 8,
+    cellHeight: 25,
+    cellWidth: 12.5,
     numberOfCellContainers: 5,
+    cellContainerWidth: 80,
+    cellContainerHeight: 10,
     horizontalAdjust: 100,
     verticalAdjust: 100,
     horizontalOffset: 0,
@@ -49,15 +48,10 @@ const PageGenerator = () => {
     showPageHeader: true,
     headerHeight: 10,
     borderSize: 2,
-    horizontalAdjust: 100,
   });
 
-  const [cellHeight, setCellHeight] = useState();
-  const [cellWidth, setCellWidth] = useState();
   const [cells, setCells] = useState([]);
   const [cellContainers, setCellContainers] = useState([]);
-  const [cellContainerHeight, setCellContainerWidth] = useState(80);
-  const [cellContainerWidth, setCellContainerHeight] = useState(10);
 
   function handleSettingsChange(event) {
     const { name, value } = event.target;
@@ -65,24 +59,39 @@ const PageGenerator = () => {
   }
 
   function createCells(rows, cols) {
-    setCellHeight(100 / rows);
-    setCellWidth(100 / cols);
+    console.log(`function createCells Started`);
+    console.log(`passed in rows is ${rows}`);
+    console.log(`passed in cols is ${cols}`);
+
+    setPageSettings((previousSettings) => ({
+      ...previousSettings,
+      cellHeight: 100 / rows,
+      cellWidth: 100 / cols,
+    }));
     let newCells = [];
     for (var i = 0; i < rows * cols; i++) {
-      console.log(`hi from 72`);
+      // console.log(`newCells i:${i}`);
+
       newCells.push({ label: i, value: i, key: i });
     }
     setCells(newCells);
   }
 
   function createCellContainers(number) {
+    console.log(`function createCellContainers Started`);
+    console.log(``);
+    console.log(``);
+    console.log(`createCellContainers passed in number is ${number}`);
+    console.log(``);
+    console.log(``);
+
     setPageSettings((previousSettings) => ({
       ...previousSettings,
       numberOfCellContainers: number,
     }));
     let newCellContainers = [];
     for (var i = 0; i < number; i++) {
-      console.log(`hi from 85`);
+      console.log(`newCellContainers i:${i}`);
 
       newCellContainers.push({ label: i, value: i, key: i });
     }
@@ -90,21 +99,25 @@ const PageGenerator = () => {
   }
 
   useEffect(() => {
+    console.log(`useEffect createCellContainers Started`);
     createCellContainers(pageSettings.numberOfCellContainers);
   }, [pageSettings.numberOfCellContainers]);
 
   useEffect(() => {
-    createCells(pageSettings.numberOfRows, pageSettings.numberOfColumns);
-  }, [pageSettings]);
+    console.log(`useEffect createCells Started`);
+    console.log(`pageSettings.numberOfStrings: ${pageSettings.numberOfStrings}`);
+    console.log(`pageSettings.numberOfVerticalLines: ${pageSettings.numberOfVerticalLines}`);
+    createCells(pageSettings.numberOfStrings, pageSettings.numberOfVerticalLines);
+  }, [pageSettings.numberOfStrings, pageSettings.numberOfVerticalLines]);
 
   const allCellsRendered = cells.map((cell) => (
     <Cell
       className='classsss' // fix this
       key={cell.key}
-      id={cell['key']}
+      id={cell['key']} // fix this
       style={{
-        height: `${cellHeight}%`,
-        width: `${cellWidth}%`,
+        height: `${pageSettings.cellHeight}%`,
+        width: `${pageSettings.cellWidth}%`,
         border: `${pageSettings.borderSize / 2}px solid black`,
       }}
     >
@@ -117,8 +130,8 @@ const PageGenerator = () => {
       className='cellContainer'
       key={cellContainer.key}
       style={{
-        width: `${cellContainerWidth}%`,
-        height: `${cellContainerHeight}%`,
+        width: `${pageSettings.cellContainerWidth}%`,
+        height: `${pageSettings.cellContainerHeight}%`,
         marginLeft: `${pageSettings.horizontalOffset}%`,
         marginBottom: `${pageSettings.rowGap}%`,
         border: `${pageSettings.borderSize / 2}px solid black`,
