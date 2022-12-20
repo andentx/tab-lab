@@ -13,11 +13,11 @@ const PageGeneratorContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  /* @media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-  } */
+  }
 `;
 
 const CellsContainer = styled.div`
@@ -131,7 +131,7 @@ const PageGenerator = () => {
 
   return (
     <PageGeneratorContainer>
-      <PagePreview pageSettings={pageSettings} cellContainers={allCellContainersRendered}></PagePreview>
+      <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered}></PagePreview>
       <FormSection pageSettings={pageSettings} onInputChange={handleSettingsChange}></FormSection>
     </PageGeneratorContainer>
   );
