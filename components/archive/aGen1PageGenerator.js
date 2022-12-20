@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactToPrint from 'react-to-print';
 
 import PagePreviewSection from './PagePreviewSection';
-import CustomSelect from '../CustomSelect';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -134,28 +133,6 @@ const RTPButton = styled.button`
   @media print {
     display: none;
     margin: 0;
-  }
-`;
-
-const FormSection = styled.div`
-  padding-top: 2rem;
-
-  /* background-color: orange; */
-  width: min(80%, 500px);
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    * {
-      /* border: solid black 1px; */
-    }
-  }
-
-  @media print {
-    display: none;
-    padding: 0;
   }
 `;
 
@@ -332,16 +309,6 @@ function Component1216Forms() {
     return options;
   }
 
-  const numberOfStringsOptions = createOptions(4, 12);
-  const numberOfColumnsOptions = createOptions(2, 12);
-  const numberOfRowsOptions = createOptions(0, 12);
-  const horizontalAdjustOptions = createOptions(90, 120);
-  const verticalAdjustOptions = createOptions(90, 120);
-  const rowGapAdjustOptions = createOptions(0, 10);
-  const headerHeightOptions = createOptions(0, 20);
-  const borderSizeOptions = createOptions(1, 5);
-  const horizontalOffsetOptions = createOptions(-15, 20);
-
   return (
     <>
       <PagePreviewSection>
@@ -368,79 +335,7 @@ function Component1216Forms() {
       </ButtonSection>
 
       <FormSection>
-        <form>
-          <CustomSelect>
-            <label htmlFor='numberOfStrings'>Number of Strings</label>
-            <select id='numberOfStrings' value={numberOfStrings} onChange={handleNumberOfStringsChange}>
-              {numberOfStringsOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='numberOfMeasureLines'>Frets / Measures</label>
-            <select id='numberOfMeasureLines' value={numberOfColumns} onChange={handleNumberOfColumnsChange}>
-              <option value={1}>None</option>
-              {numberOfColumnsOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='numberOfRows'>Number of Rows</label>
-            <select id='numberOfRows' value={numberOfCellContainers} onChange={handleNumberOfCellContainersChange}>
-              {numberOfRowsOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='horizontalAdjust'>Adjust Horizontal Scale</label>
-            <select id='horizontalAdjust' value={horizontalAdjust} onChange={handleHorizontalAdjustChange}>
-              {horizontalAdjustOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='verticalAdjust'>Adjust Vertical Scale</label>
-            <select id='verticalAdjust' value={verticalAdjust} onChange={handleVerticalAdjustChange}>
-              {verticalAdjustOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='leftOffset'>Adjust Horizontal Offset</label>
-            <select id='leftOffset' value={leftOffset} onChange={handleLeftOffsetChange}>
-              {horizontalOffsetOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='leftOffset'>Adjust Space Between Rows</label>
-            <select id='gapBetweenTabRows' value={gapBetweenTabRows} onChange={handleGapBetweenTabRowsChange}>
-              {rowGapAdjustOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='pageHeaderSelect'>Page Header</label>
-            <select id='pageHeaderSelect' value={isHeaderVisible} onChange={handleIsHeaderVisibleChange}>
-              <option value='true'>Show</option>
-              <option value='false'>Hide</option>
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='headerHeightSelect'>Page Header Height</label>
-            <select id='headerHeightSelect' value={headerHeight} onChange={handleHeaderHeightChange}>
-              {headerHeightOptions}
-            </select>
-          </CustomSelect>
-
-          <CustomSelect>
-            <label htmlFor='borderSizeSelect'>Adjust Line Size</label>
-            <select id='borderSizeSelect' value={borderSize} onChange={handleBorderSizeChange}>
-              {borderSizeOptions}
-            </select>
-          </CustomSelect>
-        </form>
+        <form></form>
       </FormSection>
     </>
   );

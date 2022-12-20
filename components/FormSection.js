@@ -4,7 +4,26 @@ import CustomSelect from './CustomSelect';
 
 import { v4 as uuidv4 } from 'uuid';
 
-const Gen2FormSectionContainer = styled.div``;
+const FormSectionContainer = styled.div`
+  padding-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(80%, 500px);
+
+  /* @media (min-width: 1200px) {
+    padding-top: 0;
+  } */
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+`;
 
 function createOptions(min, max) {
   const options = [];
@@ -30,7 +49,7 @@ const Gen2FormSection = ({ pageSettings, onInputChange }) => {
   const borderSizeOptions = createOptions(1, 5);
 
   return (
-    <Gen2FormSectionContainer>
+    <FormSectionContainer>
       <form>
         <CustomSelect>
           <label htmlFor='numberOfStringsSelect'>Number of Strings</label>
@@ -104,7 +123,7 @@ const Gen2FormSection = ({ pageSettings, onInputChange }) => {
           </select>
         </CustomSelect>
       </form>
-    </Gen2FormSectionContainer>
+    </FormSectionContainer>
   );
 };
 

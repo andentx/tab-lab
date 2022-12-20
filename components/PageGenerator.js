@@ -6,8 +6,18 @@ import PagePreview from '../components/PagePreview';
 import FormSection from './FormSection';
 
 const PageGeneratorContainer = styled.div`
-  background-color: hotpink;
-  padding: 2rem;
+  display: flex;
+
+  width: 100%;
+
+  flex-direction: column;
+  align-items: center;
+
+  /* @media (min-width: 1200px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  } */
 `;
 
 const PageGenerator = () => {
