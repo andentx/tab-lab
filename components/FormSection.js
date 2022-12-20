@@ -40,7 +40,7 @@ function createOptions(min, max) {
 const Gen2FormSection = ({ pageSettings, onInputChange }) => {
   const numberOfStringsOptions = createOptions(4, 12);
   const numberOfVerticalLinesOptions = createOptions(2, 12);
-  const numberOfRowsOptions = createOptions(0, 12);
+  const numberOfCellContainersOptions = createOptions(0, 12);
   const horizontalAdjustOptions = createOptions(90, 120);
   const verticalAdjustOptions = createOptions(90, 120);
   const horizontalOffsetOptions = createOptions(-20, 20);
@@ -67,9 +67,9 @@ const Gen2FormSection = ({ pageSettings, onInputChange }) => {
         </CustomSelect>
 
         <CustomSelect>
-          <label htmlFor='numberOfRowsSelect'>Number of Rows</label>
-          <select id='numberOfRowsSelect' name='numberOfRows' value={pageSettings.numberOfRows} onChange={onInputChange}>
-            {numberOfRowsOptions}
+          <label htmlFor='numberOfCellContainersSelect'>Number of Rows</label>
+          <select id='numberOfCellContainers' name='numberOfCellContainers' value={pageSettings.numberOfCellContainers} onChange={onInputChange}>
+            {numberOfCellContainersOptions}
           </select>
         </CustomSelect>
 
