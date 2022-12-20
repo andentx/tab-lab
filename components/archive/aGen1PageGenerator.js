@@ -297,18 +297,6 @@ function Component1216Forms() {
     </CellsContainer>
   ));
 
-  function createOptions(min, max) {
-    const options = [];
-    for (let i = min; i <= max; i++) {
-      options.push(
-        <option value={i} key={uuidv4()}>
-          {i}
-        </option>
-      );
-    }
-    return options;
-  }
-
   return (
     <>
       <PagePreviewSection>
