@@ -41,18 +41,13 @@ const PageHeader = styled.div`
 
 const Gen2PagePreview = ({ pageSettings, allCellContainersRendered }) => {
   return (
-    <Page
-      style={{
-        height: `${pageSettings.pageHeight * 100}px`,
-        width: `${pageSettings.pageWidth * 100}px`,
-      }}
-    >
-      {/* <PageHeader
+    <Page>
+      <PageHeader
         style={{
           borderBottom: `${pageSettings.showPageHeader}`,
           height: `${pageSettings.headerHeight}%`,
         }}
-      /> */}
+      />
       {allCellContainersRendered}
     </Page>
   );
