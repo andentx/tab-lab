@@ -16,6 +16,7 @@ const PageContainer = styled.div`
 
   @media print {
     width: 100%;
+    min-height: 0;
   }
 `;
 
