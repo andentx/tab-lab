@@ -6,7 +6,8 @@ import ReactToPrint from 'react-to-print';
 import styled from 'styled-components';
 
 import PagePreview from '../components/PagePreview';
-import ComponentToPrint from '../components/ComponentToPrint';
+import ComponentToPrintSafari from './ComponentToPrintSafari';
+import ComponentToPrintChrome from './ComponentToPrintChrome';
 import FormSection from './FormSection';
 
 const PageGeneratorContainer = styled.div`
@@ -31,10 +32,10 @@ const ButtonSection = styled.div`
   }
 `;
 
-const RTPButton = styled.button`
+const RTPButtonSafari = styled.button`
   background-color: orange;
 
-  width: 4rem;
+  min-width: 4rem;
   min-height: 50px;
 
   margin: 2rem;
@@ -44,14 +45,28 @@ const RTPButton = styled.button`
     margin: 0;
   }
 `;
+const RTPButtonChrome = styled.button`
+  background-color: green;
 
+  min-width: 4rem;
+  min-height: 50px;
+
+  margin: 2rem;
+
+  @media print {
+    display: none;
+    margin: 0;
+  }
+`;
 const InvisibleDiv = styled.div``;
 
-const ComponentToPrintContainer = styled.div`
+const ComponentToPrintContainerSafari = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
+const ComponentToPrintContainerChrome = styled.div``;
 
 const CellsContainer = styled.div`
   background-color: black;
@@ -66,7 +81,8 @@ const Cell = styled.div`
 `;
 
 const PageGenerator = () => {
-  let componentRef = useRef();
+  let componentRefSafari = useRef();
+  let componentRefChrome = useRef();
 
   const [pageSettings, setPageSettings] = useState({
     numberOfStrings: 6,
@@ -167,17 +183,23 @@ const PageGenerator = () => {
     <PageGeneratorContainer>
       <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
 
-      <InvisibleDiv style={{ display: 'none' }}>
-        <ComponentToPrintContainer ref={(el) => (componentRef = el)}>
-          <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
-        </ComponentToPrintContainer>
-      </InvisibleDiv>
-
       <ButtonSection>
         <button>button</button>
-        <ReactToPrint trigger={() => <RTPButton>Print</RTPButton>} content={() => componentRef} />
+        <ReactToPrint trigger={() => <RTPButtonSafari>Print Safari</RTPButtonSafari>} content={() => componentRefSafari} />
+        <ReactToPrint trigger={() => <RTPButtonChrome>Print Chrome</RTPButtonChrome>} content={() => componentRefChrome} />
       </ButtonSection>
+
       <FormSection pageSettings={pageSettings} onInputChange={handleSettingsChange}></FormSection>
+
+      <InvisibleDiv style={{ display: 'none' }}>
+        <ComponentToPrintContainerChrome ref={(el) => (componentRefChrome = el)}>
+          <ComponentToPrintChrome pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
+        </ComponentToPrintContainerChrome>
+
+        <ComponentToPrintContainerSafari ref={(el) => (componentRefSafari = el)}>
+          <ComponentToPrintSafari pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
+        </ComponentToPrintContainerSafari>
+      </InvisibleDiv>
     </PageGeneratorContainer>
   );
 };
