@@ -37,12 +37,12 @@ function createOptions(min, max) {
   return options;
 }
 
-const Gen2FormSection = ({ pageSettings, onInputChange }) => {
+const FormSection = ({ pageSettings, onInputChange }) => {
   const numberOfStringsOptions = createOptions(4, 12);
   const numberOfVerticalLinesOptions = createOptions(2, 12);
   const numberOfCellContainersOptions = createOptions(0, 12);
-  const horizontalAdjustOptions = createOptions(90, 120);
-  const verticalAdjustOptions = createOptions(90, 120);
+  const horizontalAdjustOptions = createOptions(80, 120);
+  const verticalAdjustOptions = createOptions(95, 110);
   const horizontalOffsetOptions = createOptions(-20, 20);
   const rowGapOptions = createOptions(0, 10);
   const headerHeightOptions = createOptions(0, 20);
@@ -104,8 +104,8 @@ const Gen2FormSection = ({ pageSettings, onInputChange }) => {
         <CustomSelect>
           <label htmlFor='showPageHeaderSelect'>Page Header</label>
           <select id='showPageHeaderSelect' name='showPageHeader' value={pageSettings.showPageHeader} onChange={onInputChange}>
-            <option value='true'>Show</option>
-            <option value='false'>Hide</option>
+            <option value='2px solid black'>Show</option>
+            <option value='none'>Hide</option>
           </select>
         </CustomSelect>
 
@@ -127,4 +127,4 @@ const Gen2FormSection = ({ pageSettings, onInputChange }) => {
   );
 };
 
-export default Gen2FormSection;
+export default FormSection;

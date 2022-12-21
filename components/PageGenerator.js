@@ -45,7 +45,7 @@ const PageGenerator = () => {
     verticalAdjust: 100,
     horizontalOffset: 0,
     rowGap: 3,
-    showPageHeader: true,
+    showPageHeader: '2px solid black',
     headerHeight: 10,
     borderSize: 2,
   });
@@ -58,7 +58,10 @@ const PageGenerator = () => {
     setPageSettings((previousSettings) => ({ ...previousSettings, [name]: value }));
   }
 
-  function createCells(rows, cols) {
+  function createCells(numberOfStrings, numberOfVerticalLines) {
+    let rows = numberOfStrings - 1;
+    let cols = numberOfVerticalLines;
+
     setPageSettings((previousSettings) => ({
       ...previousSettings,
       cellHeight: 100 / rows,
@@ -111,8 +114,8 @@ const PageGenerator = () => {
       className='cellContainer'
       key={cellContainer.key}
       style={{
-        width: `${pageSettings.cellContainerWidth}%`,
-        height: `${pageSettings.cellContainerHeight}%`,
+        width: `${pageSettings.horizontalAdjust - 20}%`,
+        height: `${pageSettings.verticalAdjust - 90}%`,
         marginLeft: `${pageSettings.horizontalOffset}%`,
         marginBottom: `${pageSettings.rowGap}%`,
         border: `${pageSettings.borderSize / 2}px solid black`,
