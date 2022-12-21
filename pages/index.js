@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Title from '../components/Title';
 import PageGenerator from '../components/PageGenerator';
 
-export default function Table() {
+export default function Index() {
   return (
     <Layout>
       <Head>
