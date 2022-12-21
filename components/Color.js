@@ -32,8 +32,6 @@ const GlobalColor = createGlobalStyle`
   @media print {
     html, body {
       background-color: white;
-      margin: 0;
-      padding: 0;
     }
   }
 
