@@ -25,6 +25,14 @@ const Page = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media print {
+    height: 100vh;
+    /* min-height: 9.5in; */
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
 `;
 
 const PageHeader = styled.div`
