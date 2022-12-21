@@ -41,6 +41,18 @@ function createOptions(min, max) {
   return options;
 }
 
+function createOptionsInHalfSteps(min, max) {
+  const options = [];
+  for (let i = min; i <= max; i += 0.5) {
+    options.push(
+      <option value={i} key={uuidv4()}>
+        {i.toFixed(1)}
+      </option>
+    );
+  }
+  return options;
+}
+
 const FormSection = ({ pageSettings, onInputChange }) => {
   const numberOfStringsOptions = createOptions(4, 12);
   const numberOfVerticalLinesOptions = createOptions(2, 12);
@@ -51,6 +63,8 @@ const FormSection = ({ pageSettings, onInputChange }) => {
   const rowGapOptions = createOptions(0, 10);
   const headerHeightOptions = createOptions(0, 20);
   const borderSizeOptions = createOptions(1, 5);
+  const pageHeightOptions = createOptionsInHalfSteps(5.0, 15.0);
+  const pageWidthOptions = createOptionsInHalfSteps(5.0, 15.0);
 
   return (
     <FormSectionContainer>
@@ -124,6 +138,20 @@ const FormSection = ({ pageSettings, onInputChange }) => {
           <label htmlFor='borderSizeSelect'>Adjust Line Size</label>
           <select id='borderSizeSelect' name='borderSize' value={pageSettings.borderSize} onChange={onInputChange}>
             {borderSizeOptions}
+          </select>
+        </CustomSelect>
+
+        <CustomSelect>
+          <label htmlFor='pageHeightSelect'>Adjust Page Height</label>
+          <select id='pageHeightSelect' name='pageHeight' value={pageSettings.pageHeight} onChange={onInputChange}>
+            {pageHeightOptions}
+          </select>
+        </CustomSelect>
+
+        <CustomSelect>
+          <label htmlFor='pageWidthSelect'>Adjust Page Width</label>
+          <select id='pageWidthSelect' name='pageWidth' value={pageSettings.pageWidth} onChange={onInputChange}>
+            {pageWidthOptions}
           </select>
         </CustomSelect>
       </form>
