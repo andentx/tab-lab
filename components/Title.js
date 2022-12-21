@@ -11,6 +11,10 @@ const TitleContainer = styled.h1`
 
   padding-top: clamp(1.6rem, 0.6333rem + 7.7333vw, 4.5rem);
   margin-bottom: clamp(0.5rem, 0.3333rem + 1.3333vw, 1rem);
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Title = () => {
