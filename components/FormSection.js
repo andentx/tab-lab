@@ -23,6 +23,10 @@ const FormSectionContainer = styled.div`
     align-items: center;
     width: 100%;
   }
+
+  @media print {
+    display: none;
+  }
 `;
 
 function createOptions(min, max) {
