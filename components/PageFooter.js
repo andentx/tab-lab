@@ -13,6 +13,10 @@ const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const PageFooter = () => {
