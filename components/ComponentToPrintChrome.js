@@ -3,24 +3,9 @@ import styled from 'styled-components';
 const Page = styled.div`
   background-color: var(--page-footer-background-color);
   background-color: white;
-  border: 3px solid black;
+  border: 0;
 
   color: var(--text-color);
-
-  /* width: min(80%, 500px); */
-  /* aspect-ratio: 8.5/11; */
-
-  /* width: 800px; */
-  /* height: 1100px; */
-
-  /* width: 400px; */
-  /* height: 550px; */
-
-  width: 300px;
-  height: 385px;
-
-  /* width: 200px; */
-  /* height: 275px; */
 
   display: flex;
   flex-direction: column;
@@ -40,12 +25,12 @@ const ComponentToPrintChrome = ({ pageSettings, allCellContainersRendered }) => 
         width: `${pageSettings.pageWidth * 100}px`,
       }}
     >
-      {/* <PageHeader
+      <PageHeader
         style={{
           borderBottom: `${pageSettings.showPageHeader}`,
           height: `${pageSettings.headerHeight}%`,
         }}
-      /> */}
+      />
       {allCellContainersRendered}
     </Page>
   );
