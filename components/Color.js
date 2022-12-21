@@ -27,10 +27,15 @@ const GlobalColor = createGlobalStyle`
   html,
   body {
     background-color: var(--site-background-color);
-
-
   }
 
+  @media print {
+    html, body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+    }
+  }
 
  `;
 
