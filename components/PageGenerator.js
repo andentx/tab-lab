@@ -45,9 +45,7 @@ const RTPButton = styled.button`
   }
 `;
 
-const InvisibleDiv = styled.div`
-  background-color: pink;
-`;
+const InvisibleDiv = styled.div``;
 
 const ComponentToPrintContainer = styled.div`
   background-color: blue;
@@ -87,6 +85,8 @@ const PageGenerator = () => {
     showPageHeader: '2px solid black',
     headerHeight: 10,
     borderSize: 2,
+    pageHeight: 11.0,
+    pageWidth: 8.5,
   });
 
   const [cells, setCells] = useState([]);
