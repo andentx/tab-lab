@@ -48,11 +48,9 @@ const RTPButton = styled.button`
 const InvisibleDiv = styled.div``;
 
 const ComponentToPrintContainer = styled.div`
-  background-color: blue;
-
-  @page {
-    size: 8.5in 11in;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CellsContainer = styled.div`
