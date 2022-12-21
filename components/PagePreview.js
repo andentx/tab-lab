@@ -27,17 +27,10 @@ const Page = styled.div`
   align-items: center;
 
   @media print {
-    /* height: 100vh; */
-    /* min-height: 9.5in; */
     min-height: 900px;
     width: 100%;
     margin: 0;
     border: 0;
-
-    @page {
-      margin: 0in;
-      size: 8.5in 11in;
-    }
   }
 `;
 
@@ -48,7 +41,12 @@ const PageHeader = styled.div`
 
 const Gen2PagePreview = ({ pageSettings, allCellContainersRendered }) => {
   return (
-    <Page>
+    <Page
+      style={{
+        height: `${pageSettings.pageHeight * 100}px`,
+        width: `${pageSettings.pageWidth * 100}px`,
+      }}
+    >
       {/* <PageHeader
         style={{
           borderBottom: `${pageSettings.showPageHeader}`,
