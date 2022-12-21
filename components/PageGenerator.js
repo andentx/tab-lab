@@ -89,13 +89,13 @@ const PageGenerator = () => {
     numberOfVerticalLines: 8,
     cellHeight: 25,
     cellWidth: 12.5,
-    numberOfCellContainers: 12,
+    numberOfCellContainers: 5,
     cellContainerWidth: 80,
     cellContainerHeight: 10,
-    horizontalAdjust: 120, //reset to 100
+    horizontalAdjust: 100,
     verticalAdjust: 100,
     horizontalOffset: 0,
-    rowGap: 0, // reset to 3
+    rowGap: 3,
     showPageHeader: '2px solid black',
     headerHeight: 10,
     borderSize: 2,
@@ -184,7 +184,6 @@ const PageGenerator = () => {
       <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
 
       <ButtonSection>
-        <button>button</button>
         <ReactToPrint trigger={() => <RTPButtonSafari>Print Safari</RTPButtonSafari>} content={() => componentRefSafari} />
         <ReactToPrint trigger={() => <RTPButtonChrome>Print Chrome</RTPButtonChrome>} content={() => componentRefChrome} />
       </ButtonSection>
