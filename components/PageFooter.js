@@ -4,15 +4,15 @@ const Footer = styled.footer`
   background-color: var(--page-footer-background-color);
   color: var(--text-color);
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   height: 4rem;
   width: 100%;
   max-width: 1200px;
 
   padding: 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   @media print {
     display: none;

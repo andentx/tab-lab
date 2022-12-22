@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Page = styled.div`
-  background-color: var(--page-footer-background-color);
   background-color: white;
   border: 0;
 
@@ -17,7 +16,7 @@ const PageHeader = styled.div`
   width: 50%;
 `;
 
-const ComponentToPrint = ({ pageSettings, allCellContainersRendered }) => {
+const ComponentToPrintSafari = ({ pageSettings, allCellContainersRendered }) => {
   return (
     <Page
       style={{
@@ -36,4 +35,4 @@ const ComponentToPrint = ({ pageSettings, allCellContainersRendered }) => {
   );
 };
 
-export default ComponentToPrint;
+export default ComponentToPrintSafari;

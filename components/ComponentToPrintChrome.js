@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Page = styled.div`
-  background-color: var(--page-footer-background-color);
   background-color: white;
   border: 0;
 

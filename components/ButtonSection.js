@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const ButtonSectionContainer = styled.div`
-  /* background-color: blue; */
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,11 +20,9 @@ const ButtonSectionContainer = styled.div`
     color: black;
 
     border: 3px solid black;
-
     border-radius: 10px;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -45,8 +41,8 @@ const ButtonSectionContainer = styled.div`
   }
 `;
 
-const BudgetSection = ({ children }) => {
+const ButtonSection = ({ children }) => {
   return <ButtonSectionContainer>{children}</ButtonSectionContainer>;
 };
 
-export default BudgetSection;
+export default ButtonSection;
