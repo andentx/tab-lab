@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import Link from 'next/link';
+
 const Footer = styled.footer`
   background-color: var(--page-footer-background-color);
   color: var(--text-color);
@@ -14,6 +16,20 @@ const Footer = styled.footer`
 
   padding: 1rem;
 
+  a {
+    color: var(--text-color);
+    transition: color 200ms;
+  }
+  a:hover {
+    color: var(--text-color-hover);
+  }
+  a:active {
+    color: var(--text-color-hover);
+  }
+  .selected {
+    color: var(--text-color-hover);
+  }
+
   @media print {
     display: none;
   }
@@ -22,9 +38,9 @@ const Footer = styled.footer`
 const PageFooter = () => {
   return (
     <Footer>
-      <p>footer link</p>
-      <p>footer link</p>
-      <p>footer link</p>
+      <Link href='/'>page builder</Link>
+      <Link href='/about'>about</Link>
+      <Link href='/help'>help</Link>
     </Footer>
   );
 };
