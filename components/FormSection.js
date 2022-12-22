@@ -9,7 +9,7 @@ const FormSectionContainer = styled.form`
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
+  width: min(80%, 500px);
 
   @media print {
     display: none;
@@ -127,19 +127,19 @@ const FormSection = ({ pageSettings, onInputChange }) => {
         </select>
       </CustomSelect>
 
-      <CustomSelect>
+      {/* <CustomSelect>
         <label htmlFor='pageHeightSelect'>Adjust Page Height</label>
         <select id='pageHeightSelect' name='pageHeight' value={pageSettings.pageHeight} onChange={onInputChange}>
           {pageHeightOptions}
         </select>
-      </CustomSelect>
+      </CustomSelect> */}
 
-      <CustomSelect>
+      {/* <CustomSelect>
         <label htmlFor='pageWidthSelect'>Adjust Page Width</label>
         <select id='pageWidthSelect' name='pageWidth' value={pageSettings.pageWidth} onChange={onInputChange}>
           {pageWidthOptions}
         </select>
-      </CustomSelect>
+      </CustomSelect> */}
     </FormSectionContainer>
   );
 };

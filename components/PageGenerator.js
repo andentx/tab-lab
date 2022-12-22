@@ -17,6 +17,8 @@ const PageGeneratorContainer = styled.div`
 
   width: 100%;
 
+  margin-bottom: clamp(10rem, 7rem + 16vw, 15rem);
+
   @media (min-width: 1200px) {
     flex-direction: row;
     align-items: flex-start;
@@ -24,9 +26,7 @@ const PageGeneratorContainer = styled.div`
   }
 `;
 
-const ButtonsAndFormsContainer = styled.div`
-  width: min(80%, 500px);
-
+const PageAndButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,16 +153,15 @@ const PageGenerator = () => {
 
   return (
     <PageGeneratorContainer>
-      <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
-
-      <ButtonsAndFormsContainer>
+      <PageAndButtonsContainer>
+        <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
         <ButtonSection>
           <ReactToPrint trigger={() => <RTPButtonSafari>Print Safari</RTPButtonSafari>} content={() => componentRefSafari} />
           <ReactToPrint trigger={() => <RTPButtonChrome>Print Chrome</RTPButtonChrome>} content={() => componentRefChrome} />
         </ButtonSection>
+      </PageAndButtonsContainer>
 
-        <FormSection pageSettings={pageSettings} onInputChange={handleSettingsChange}></FormSection>
-      </ButtonsAndFormsContainer>
+      <FormSection pageSettings={pageSettings} onInputChange={handleSettingsChange}></FormSection>
 
       <InvisibleDiv style={{ display: 'none' }}>
         <ComponentToPrintContainerChrome ref={(el) => (componentRefChrome = el)}>
