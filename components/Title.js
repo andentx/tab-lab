@@ -9,8 +9,8 @@ const TitleContainer = styled.h1`
 
   text-align: center;
 
-  padding-top: clamp(1.6rem, 0.6333rem + 7.7333vw, 4.5rem);
-  margin-bottom: clamp(0.5rem, 0.3333rem + 1.3333vw, 1rem);
+  margin-top: clamp(1rem, -0.8rem + 9.6vw, 4rem);
+  margin-bottom: clamp(1rem, -0.8rem + 9.6vw, 4rem);
 
   @media print {
     display: none;
