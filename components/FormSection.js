@@ -5,13 +5,13 @@ import CustomSelect from './CustomSelect';
 import { v4 as uuidv4 } from 'uuid';
 
 const FormSectionContainer = styled.div`
-  padding-top: 2rem;
+  /* background-color: purple; */
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: min(80%, 500px);
+  width: 100%;
 
   /* @media (min-width: 1200px) {
     padding-top: 0;
