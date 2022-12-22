@@ -8,9 +8,11 @@ import styled from 'styled-components';
 import PagePreview from '../components/PagePreview';
 import ComponentToPrintSafari from './ComponentToPrintSafari';
 import ComponentToPrintChrome from './ComponentToPrintChrome';
+import ButtonSection from './ButtonSection';
 import FormSection from './FormSection';
 
 const PageGeneratorContainer = styled.div`
+  /* background-color: gold; */
   display: flex;
 
   width: 100%;
@@ -25,40 +27,18 @@ const PageGeneratorContainer = styled.div`
   }
 `;
 
-const ButtonSection = styled.div`
-  background-color: orange;
-  @media print {
-    display: none;
-  }
-`;
-
-const RTPButtonSafari = styled.button`
-  background-color: orange;
-
-  min-width: 4rem;
-  min-height: 50px;
-
-  margin: 2rem;
-
-  @media print {
-    display: none;
-    margin: 0;
-  }
-`;
-const RTPButtonChrome = styled.button`
-  background-color: green;
-
-  min-width: 4rem;
-  min-height: 50px;
-
-  margin: 2rem;
-
-  @media print {
-    display: none;
-    margin: 0;
-  }
-`;
+const RTPButtonSafari = styled.button``;
+const RTPButtonChrome = styled.button``;
 const InvisibleDiv = styled.div``;
+
+const ButtonsAndFormsContainer = styled.div`
+  /* background-color: green; */
+  width: min(80%, 500px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const ComponentToPrintContainerSafari = styled.div`
   display: flex;
@@ -183,12 +163,14 @@ const PageGenerator = () => {
     <PageGeneratorContainer>
       <PagePreview pageSettings={pageSettings} allCellContainersRendered={allCellContainersRendered} />
 
-      <ButtonSection>
-        <ReactToPrint trigger={() => <RTPButtonSafari>Print Safari</RTPButtonSafari>} content={() => componentRefSafari} />
-        <ReactToPrint trigger={() => <RTPButtonChrome>Print Chrome</RTPButtonChrome>} content={() => componentRefChrome} />
-      </ButtonSection>
+      <ButtonsAndFormsContainer>
+        <ButtonSection>
+          <ReactToPrint trigger={() => <RTPButtonSafari>Print Safari</RTPButtonSafari>} content={() => componentRefSafari} />
+          <ReactToPrint trigger={() => <RTPButtonChrome>Print Chrome</RTPButtonChrome>} content={() => componentRefChrome} />
+        </ButtonSection>
 
-      <FormSection pageSettings={pageSettings} onInputChange={handleSettingsChange}></FormSection>
+        <FormSection pageSettings={pageSettings} onInputChange={handleSettingsChange}></FormSection>
+      </ButtonsAndFormsContainer>
 
       <InvisibleDiv style={{ display: 'none' }}>
         <ComponentToPrintContainerChrome ref={(el) => (componentRefChrome = el)}>
