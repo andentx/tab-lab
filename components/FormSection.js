@@ -72,7 +72,7 @@ const FormSection = ({ pageSettings, onInputChange }) => {
 
       <CustomSelect>
         <label htmlFor='numberOfCellContainersSelect'>Number of Rows</label>
-        <select id='numberOfCellContainers' name='numberOfCellContainers' value={pageSettings.numberOfCellContainers} onChange={onInputChange}>
+        <select id='numberOfCellContainersSelect' name='numberOfCellContainers' value={pageSettings.numberOfCellContainers} onChange={onInputChange}>
           {numberOfCellContainersOptions}
         </select>
       </CustomSelect>
