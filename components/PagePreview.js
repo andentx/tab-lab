@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 const Page = styled.div`
-  background-color: var(--page-footer-background-color);
   background-color: white;
   border: 3px solid black;
 
   color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 2rem;
 
   /* responsive version */
   /* width: min(80%, 500px); */
@@ -36,42 +41,6 @@ const Page = styled.div`
     height: 660px;
   }
 
-  /* @media (min-width: 700px) {
-    width: 595px;
-    height: 770px;
-  } */
-
-  /* @media (min-width: 800px) {
-    width: 680px;
-    height: 880px;
-  } */
-
-  /* @media (min-width: 900px) {
-    width: 765px;
-    height: 990px;
-  } */
-
-  /* @media (min-width: 1000px) {
-    width: 850px;
-    height: 1100px;
-  } */
-
-  /* @media (min-width: 1100px) {
-    width: 935px;
-    height: 1210px;
-  } */
-
-  /* @media (min-width: 1200px) {
-    width: 1020px;
-    height: 1320px;
-  } */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-bottom: 2rem;
-
   @media print {
     width: 100%;
     margin: 0;
@@ -80,11 +49,11 @@ const Page = styled.div`
 `;
 
 const PageHeader = styled.div`
-  margin-bottom: 3%;
   width: 50%;
+  margin-bottom: 3%;
 `;
 
-const Gen2PagePreview = ({ pageSettings, allCellContainersRendered }) => {
+const PagePreview = ({ pageSettings, allCellContainersRendered }) => {
   return (
     <Page>
       <PageHeader
@@ -98,4 +67,4 @@ const Gen2PagePreview = ({ pageSettings, allCellContainersRendered }) => {
   );
 };
 
-export default Gen2PagePreview;
+export default PagePreview;

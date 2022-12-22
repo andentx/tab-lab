@@ -1,24 +1,21 @@
-import React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import ReactToPrint from 'react-to-print';
 
 import styled from 'styled-components';
 
-import PagePreview from '../components/PagePreview';
+import PagePreview from './PagePreview';
+import ButtonSection from './ButtonSection';
 import ComponentToPrintSafari from './ComponentToPrintSafari';
 import ComponentToPrintChrome from './ComponentToPrintChrome';
-import ButtonSection from './ButtonSection';
 import FormSection from './FormSection';
 
 const PageGeneratorContainer = styled.div`
-  /* background-color: gold; */
   display: flex;
-
-  width: 100%;
-
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
 
   @media (min-width: 1200px) {
     flex-direction: row;
@@ -27,18 +24,17 @@ const PageGeneratorContainer = styled.div`
   }
 `;
 
-const RTPButtonSafari = styled.button``;
-const RTPButtonChrome = styled.button``;
-const InvisibleDiv = styled.div``;
-
 const ButtonsAndFormsContainer = styled.div`
-  /* background-color: green; */
   width: min(80%, 500px);
 
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
+const RTPButtonSafari = styled.button``;
+const RTPButtonChrome = styled.button``;
+const InvisibleDiv = styled.div``;
 
 const ComponentToPrintContainerSafari = styled.div`
   display: flex;
@@ -61,9 +57,6 @@ const Cell = styled.div`
 `;
 
 const PageGenerator = () => {
-  let componentRefSafari = useRef();
-  let componentRefChrome = useRef();
-
   const [pageSettings, setPageSettings] = useState({
     numberOfStrings: 6,
     numberOfVerticalLines: 8,
@@ -129,23 +122,20 @@ const PageGenerator = () => {
 
   const allCellsRendered = cells.map((cell) => (
     <Cell
-      className='classsss' // fix this
       key={cell.key}
-      id={cell['key']} // fix this
+      id={cell['key']}
       style={{
         height: `${pageSettings.cellHeight}%`,
         width: `${pageSettings.cellWidth}%`,
         border: `${pageSettings.borderSize / 2}px solid black`,
       }}
-    >
-      {cell.name}
-    </Cell>
+    />
   ));
 
   const allCellContainersRendered = cellContainers.map((cellContainer) => (
     <CellsContainer
-      className='cellContainer'
       key={cellContainer.key}
+      id={cellContainer['key']}
       style={{
         width: `${pageSettings.horizontalAdjust - 20}%`,
         height: `${pageSettings.verticalAdjust - 90}%`,
@@ -153,11 +143,13 @@ const PageGenerator = () => {
         marginBottom: `${pageSettings.rowGap}%`,
         border: `${pageSettings.borderSize / 2}px solid black`,
       }}
-      id={cellContainer['key']}
     >
       {allCellsRendered}
     </CellsContainer>
   ));
+
+  let componentRefSafari = useRef();
+  let componentRefChrome = useRef();
 
   return (
     <PageGeneratorContainer>
