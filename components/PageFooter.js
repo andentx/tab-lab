@@ -19,6 +19,8 @@ const Footer = styled.footer`
   a {
     color: var(--text-color);
     transition: color 200ms;
+    text-align: center;
+    width: 10rem;
   }
   a:hover {
     color: var(--text-color-hover);
