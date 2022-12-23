@@ -9,8 +9,6 @@ export default function Index() {
     <Layout>
       <Head>
         <title>tab lab - development</title>
-        <meta name='description' content='tab lab - development' />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Title />
