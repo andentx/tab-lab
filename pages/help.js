@@ -8,9 +8,7 @@ export default function Help() {
   return (
     <Layout>
       <Head>
-        <title>tab lab - development</title>
-        <meta name='description' content='tab lab - development' />
-        <link rel='icon' href='/favicon.ico' />
+        <title>tab lab - help</title>\
       </Head>
 
       <Title />
