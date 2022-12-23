@@ -13,6 +13,8 @@ const TextBoxContainer = styled.div`
   min-height: 500px;
   width: min(80%, 500px);
 
+  margin-bottom: clamp(1rem, -0.8rem + 9.6vw, 4rem);
+
   h2 {
     font-size: clamp(1.6rem, 1.36rem + 1.28vw, 2rem);
   }
@@ -20,6 +22,11 @@ const TextBoxContainer = styled.div`
   p {
     width: 90%;
     line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  p b {
+    line-height: 2;
   }
 
   a {

@@ -17,7 +17,7 @@ export default function About() {
       <TextBox>
         <h2>about</h2>
         <p>
-          <b>tab lab</b> is a tool for creating guitar tab templates.
+          <b>tab lab</b> is a tool for creating guitar tab templates
           <br />
           <br />
           <br />- made by <a href='https://andrewdent.dev'>andrew</a>
