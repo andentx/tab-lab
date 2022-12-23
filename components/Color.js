@@ -13,6 +13,12 @@ const GlobalColor = createGlobalStyle`
     --sunset-gold: hsl(45, 100%, 50%);
     --sunset-gold-dark: hsl(45, 100%, 30%);
 
+    /* more colors */
+    --surf-green: rgb(176, 218, 184);
+    --daphne-blue: rgb(169, 210, 220);
+    --rosewood1: rgb(77, 58, 53);
+    --rosewood2: rgb(123, 87, 89);
+
     /* color roles */
     --site-background-color: var(--sf-bay);
     --text-color: var(--aged-white);
