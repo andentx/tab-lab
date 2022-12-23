@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# tab lab
 
-## Getting Started
+[View live](https://tab-lab-development.vercel.app)
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![A screenshot of the tab lab website](/images/tablabpreviewimage.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Description
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Tab Lab is a tool for creating guitar tab templates.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<br>
 
-## Learn More
+## Links
 
-To learn more about Next.js, take a look at the following resources:
+- [View live](https://tab-lab-development.vercel.app)
+- [View Demo](https://www.youtube.com/playlist?list=PL4ehYlXzYbYLc7h7smM2yt6BOlJIPHyqn)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Email - andrew@andrewdent.dev](mailto:andrew@andrewdent.dev)
+- [GitHub - @andentx](https://github.com/andentx)
+- [LinkedIn - Andrew Dent](https://www.linkedin.com/in/andrewdentdev/)
+- [Twitter - @andentx](https://twitter.com/andentx)
