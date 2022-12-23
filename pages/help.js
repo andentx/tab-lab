@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import Layout from '../components/Layout';
 import Title from '../components/Title';
+import TextBox from '../components/TextBox';
 
 export default function Help() {
   return (
@@ -13,7 +14,17 @@ export default function Help() {
       </Head>
 
       <Title />
-      <p>help section - coming soon</p>
+      <TextBox>
+        <h2>help</h2>
+        <p>
+          <b>print safari - </b>lafdsfds
+          <br />
+          <b>print chrome - </b>lafdsfds
+          <br />
+          <br />1 - Adjust settings
+          <br />2 - Print
+        </p>
+      </TextBox>
     </Layout>
   );
 }

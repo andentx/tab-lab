@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import Layout from '../components/Layout';
 import Title from '../components/Title';
-import PageGenerator from '../components/PageGenerator';
+import TextBox from '../components/TextBox';
 
 export default function About() {
   return (
@@ -14,7 +14,15 @@ export default function About() {
       </Head>
 
       <Title />
-      <p>about section - coming soon</p>
+      <TextBox>
+        <h2>about</h2>
+        <p>
+          <b>tab lab</b> is a tool for creating guitar tab templates.
+          <br />
+          <br />
+          <br />- made by <a href='https://andrewdent.dev'>andrew</a>
+        </p>
+      </TextBox>
     </Layout>
   );
 }
