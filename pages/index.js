@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-        <title>tab lab - development</title>
+        <title>tab lab | page builder</title>
       </Head>
 
       <Title />

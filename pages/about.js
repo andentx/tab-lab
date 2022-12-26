@@ -8,7 +8,7 @@ export default function About() {
   return (
     <Layout>
       <Head>
-        <title>tab lab - about</title>
+        <title>tab lab | about</title>
       </Head>
 
       <Title />

@@ -8,7 +8,7 @@ export default function Help() {
   return (
     <Layout>
       <Head>
-        <title>tab lab - help</title>\
+        <title>tab lab | help</title>
       </Head>
 
       <Title />
