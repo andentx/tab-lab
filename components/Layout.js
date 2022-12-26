@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
         <meta property='og:image:alt' content='A screenshot of the Tab Lab website' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://tab-lab-development.vercel.app/' />
+        <meta property='og:url' content='https://tab-lab.vercel.app/' />
 
         <meta name='twitter:card' content='summary' />
 

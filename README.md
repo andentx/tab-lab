@@ -1,6 +1,6 @@
 # tab lab
 
-[View live](https://tab-lab-development.vercel.app)
+[View live](https://tab-lab.vercel.app)
 
 <br />
 
@@ -186,7 +186,7 @@ Adjust thickness of all tab lines
 
 ## Links
 
-- [View live](https://tab-lab-development.vercel.app)
+- [View live](https://tab-lab.vercel.app)
 
 <br>
 
