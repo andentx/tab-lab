@@ -22,6 +22,7 @@ Users can see a preview of the template, make adjustments, and download/print th
 
 - [FAQ](#faq)
 - [How to use](#how-to-use)
+- [Examples](#examples)
 - [Links](#links)
 - [Contact](#contact)
 
@@ -181,6 +182,15 @@ Adjust height of page header
 <br />
 Adjust thickness of all tab lines
 <br />
+<br />
+<br />
+
+## Examples
+
+<br />
+
+![Examples of different templates](public/images/tablabexamples.png)
+
 <br />
 <br />
 
