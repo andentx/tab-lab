@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = styled.footer`
   background-color: var(--page-footer-background-color);
-  color: var(--text-color);
+  color: var(--footer-link-color);
 
   display: flex;
   align-items: center;
@@ -17,19 +17,19 @@ const Footer = styled.footer`
   padding: 1rem;
 
   a {
-    color: var(--text-color);
+    color: var(--footer-link-color);
     transition: color 200ms;
     text-align: center;
     width: 10rem;
   }
   a:hover {
-    color: var(--text-color-hover);
+    color: var(--footer-link-color-hover);
   }
   a:active {
-    color: var(--text-color-hover);
+    color: var(--footer-link-color-hover);
   }
   .selected {
-    color: var(--text-color-hover);
+    color: var(--footer-link-color-hover);
   }
 
   @media print {
@@ -40,9 +40,9 @@ const Footer = styled.footer`
 const PageFooter = () => {
   return (
     <Footer>
-      <Link href='/'>page builder</Link>
-      <Link href='/about'>about</Link>
-      <Link href='/help'>help</Link>
+      <Link href="/">page builder</Link>
+      <Link href="/about">about</Link>
+      <Link href="/help">help</Link>
     </Footer>
   );
 };

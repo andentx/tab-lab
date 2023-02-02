@@ -10,7 +10,7 @@ const CustomSelectContainer = styled.div`
 
   label {
     background-color: var(--site-background-color);
-    color: var(--text-color);
+    color: var(--form-label-color);
 
     font-size: 0.75rem;
     height: 1.5rem;
@@ -30,7 +30,7 @@ const CustomSelectContainer = styled.div`
     padding: 1rem;
     padding-right: 1rem;
 
-    border: solid 2px var(--text-color);
+    border: solid 2px var(--form-border-color);
 
     width: 100%;
 
@@ -52,8 +52,8 @@ const CustomSelect = ({ children }) => {
   return (
     <CustomSelectContainer>
       {children}
-      <svg width='24' height='24' viewBox='0 0 24 24'>
-        <path d='M12 21l-12-18h24z' />
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M12 21l-12-18h24z" />
       </svg>
     </CustomSelectContainer>
   );

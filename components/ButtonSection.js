@@ -16,8 +16,8 @@ const ButtonSectionContainer = styled.div`
   }
 
   button {
-    background-color: var(--aged-white);
-    color: black;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
 
     border: 3px solid black;
     border-radius: 10px;
