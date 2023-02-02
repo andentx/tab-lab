@@ -47,26 +47,54 @@ const Layout = ({ children }) => {
 
         <link rel='icon' href='/favicon.ico' />
         <link rel='shortcut icon' href='/icons/favicon.ico' />
-        <link rel='icon' type='image/png' sizes='32x32' href='icons/favicon-32x32.png' />
-        <link rel='icon' type='image/png' sizes='16x16' href='icons/favicon-16x16.png' />
-        <link rel='apple-touch-icon' sizes='180x180' href='icons/apple-touch-icon.png' />
-        <link rel='mask-icon' href='icons/safari-pinned-tab.svg' color='#hsl(186, 62%, 16%)' />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='icons/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='icons/favicon-16x16.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='icons/apple-touch-icon.png'
+        />
+        <link
+          rel='mask-icon'
+          href='icons/safari-pinned-tab.svg'
+          color='#hsl(186, 62%, 16%)'
+        />
         <link rel='manifest' href='icons/site.webmanifest' />
         <meta name='msapplication-TileColor' content='#hsl(186, 62%, 16%)' />
         <meta name='msapplication-config' content='icons/browserconfig.xml' />
 
-        <meta property='og:title' content='Tab Lab | A Guitar Tab Template Generator' />
-        <meta property='og:description' content='Tab Lab is a tool for creating guitar tab templates.' />
+        <meta
+          property='og:title'
+          content='Tab Lab | A Guitar Tab Template Generator'
+        />
+        <meta
+          property='og:description'
+          content='Tab Lab is a tool for creating guitar tab templates.'
+        />
         <meta property='og:image' content='https://i.imgur.com/n5Q76sN.png' />
-        <meta property='og:image:alt' content='A screenshot of the Tab Lab website' />
+        <meta
+          property='og:image:alt'
+          content='A screenshot of the Tab Lab website'
+        />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://tab-lab.vercel.app/' />
 
         <meta name='twitter:card' content='summary' />
 
-        <meta name='theme-color' content='hsl(186, 62%, 16%)' />
+        <meta name='theme-color' content='hsl(68, 100%, 30%)' />
       </Head>
+
       <Color />
       <PageContainer>
         <MainContent>{children}</MainContent>
