@@ -81,7 +81,7 @@ const Layout = ({ children }) => {
           property='og:description'
           content='Tab Lab is a tool for creating guitar tab templates.'
         />
-        <meta property='og:image' content='https://i.imgur.com/n5Q76sN.png' />
+        <meta property='og:image' content='https://i.imgur.com/3hwAy3q.png' />
         <meta
           property='og:image:alt'
           content='A screenshot of the Tab Lab website'
