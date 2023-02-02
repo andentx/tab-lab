@@ -4,29 +4,34 @@ const GlobalColor = createGlobalStyle`
 
   :root {
     /* primary color */
-    --sf-bay: hsl(186, 62%, 16%);
+    --lab-green: hsl(68, 100%, 30%);
+    --primary-color: var(--lab-green);
 
     /* secondary color */
-    --aged-white: hsl(34, 78%, 91%);
+    --beige: hsl(52, 94%, 94%);
+    --secondary-color: var(--beige);
 
     /* accent color */
-    --sunset-gold: hsl(45, 100%, 50%);
-    --sunset-gold-dark: hsl(45, 100%, 30%);
+    --dark-beige: hsl(52, 94%, 20%);
+    --accent-color: var(--dark-beige);
 
-    /* more colors */
-    --surf-green: rgb(176, 218, 184);
-    --daphne-blue: rgb(169, 210, 220);
-    --rosewood1: rgb(77, 58, 53);
-    --rosewood2: rgb(123, 87, 89);
 
     /* color roles */
-    --site-background-color: var(--sf-bay);
-    --text-color: var(--aged-white);
-    --text-color-hover: var(--sunset-gold);
+    --site-background-color: var(--primary-color);
+    --text-color: var(--secondary-color);
+    --text-color-hover: var(--accent-color);
 
     /* color assignments */
     --main-section-background-color: var(--site-background-color);
-    --title-color: var(--sunset-gold);
+    --title-color: var(--secondary-color);
+    --form-label-color: var(--secondary-color);
+    --form-border-color: var(--secondary-color);
+    --button-background-color: var(--secondary-color);
+    --button-text-color: black;
+    --button-border-color: black;
+    --footer-link-color: var(--text-color);
+    --footer-link-color-hover: var(--text-color-hover);
+
 
   }
 
