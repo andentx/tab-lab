@@ -19,7 +19,7 @@ const ButtonSectionContainer = styled.div`
     background-color: var(--button-background-color);
     color: var(--button-text-color);
 
-    border: 3px solid black;
+    border: 3px solid var(--button-border-color);
     border-radius: 10px;
 
     display: flex;
