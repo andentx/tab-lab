@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const TextBoxContainer = styled.div`
-  background-color: var(--aged-white);
+  background-color: var(--secondary-color);
   color: black;
 
   border: 3px solid black;
@@ -11,7 +11,7 @@ const TextBoxContainer = styled.div`
   align-items: center;
 
   min-height: 500px;
-  width: min(80%, 500px);
+  width: min(80%, 650px);
 
   margin-bottom: clamp(1rem, -0.8rem + 9.6vw, 4rem);
 
