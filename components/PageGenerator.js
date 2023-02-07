@@ -17,7 +17,7 @@ const PageGeneratorContainer = styled.div`
 
   width: 100%;
 
-  margin-bottom: clamp(10rem, 7rem + 16vw, 15rem);
+  margin-bottom: 5rem;
 
   @media (min-width: 1200px) {
     flex-direction: row;
