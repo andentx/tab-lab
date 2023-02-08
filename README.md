@@ -81,7 +81,11 @@ So instead for this project, I made an effort to just get everything working bef
 <br>
 <b>CSS-in-JS + SSR = FOUC</b>
 <br>
-Working with Styled Components and Next.JS is causing a flash of unstyled content. This is due to the CSS-in-JS being loaded after the initial page load. I either need to figure out how to get SSG (Static Site Generation) working with Next.JS so I can have the Styled Components converted to vanilla CSS at build time and served at initial load, or refactor the Styled Components to a different method of using CSS.
+Working with Styled Components and Next.JS is causing a flash of unstyled content. This is due to the CSS-in-JS being loaded after the initial page load. ~~I either need to figure out how to get SSG (Static Site Generation) working with Next.JS so I can have the Styled Components converted to vanilla CSS at build time and served at initial load, or refactor the Styled Components to a different method of using CSS.~~
+<br />
+<br />
+**update** - I was able to fix this issue using ServerStyleSheet - [view commit](https://github.com/andentx/tab-lab/commit/5bed0d9b8f5143f5f18c69860af71c60f4f21666)
+<br />
 <br />
 <br />
 <b>CSS on different devices</b>
@@ -100,8 +104,8 @@ During testing I found that different devices and browsers completely changed wh
 
 <b>Bugs & Improvements</b>
 
-- Fix flash of unstyled content issue
-- Refactor CSS to something other than Styled Components
+- ~~Fix flash of unstyled content issue~~
+- ~~Refactor CSS to something other than Styled Components~~
 - Improve adjustment controls
 - Improve printing accuracy on Safari
 
