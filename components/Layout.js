@@ -42,7 +42,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <meta name='description' content='tab lab - development' />
+        <meta
+          name='description'
+          content='Tab Lab | A Guitar Tab Template Generator'
+        />
         <meta name='author' content='Andrew Dent' />
 
         <link rel='icon' href='/favicon.ico' />
