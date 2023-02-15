@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
           color='#hsl(186, 62%, 16%)'
         />
         <link rel='manifest' href='icons/site.webmanifest' />
-        <meta name='msapplication-TileColor' content='#hsl(186, 62%, 16%)' />
+        <meta name='msapplication-TileColor' content='hsl(186, 62%, 16%)' />
         <meta name='msapplication-config' content='icons/browserconfig.xml' />
 
         <meta
