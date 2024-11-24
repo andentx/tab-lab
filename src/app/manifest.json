@@ -1,0 +1,9 @@
+{
+  "name": "Tab Lab",
+  "short_name": "Tab Lab",
+  "description": "Create customizable templates for guitar tabs, bass tabs, and scale charts, with support for instruments like 8-string guitars and 5-string basses. Save or print your templates effortlessly.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4b5563",
+  "theme_color": "#4b5563"
+}

@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* reset */
+html,
+body,
+button,
+header,
+main,
+menu,
+nav,
+footer,
+section,
+article,
+pre,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-style: none;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* print */
+@media print {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  next-route-announcer {
+    display: none;
+  }
+}
+
+/* prose  */
+.custom-prose {
+  max-width: 67ch;
+  width: 100%;
+}
+.custom-prose h1 {
+  @apply mb-8 text-4xl font-extrabold;
+}
+.custom-prose h2 {
+  @apply mb-6 text-2xl font-bold;
+}
+.custom-prose h3 {
+  @apply mb-3 text-xl font-semibold;
+}
+.custom-prose h4 {
+  @apply mb-2 text-base font-semibold;
+}
+.custom-prose h5 {
+  @apply mb-2 text-base font-normal;
+}
+.custom-prose h6 {
+  @apply mb-2 text-base font-normal;
+}
+.custom-prose p {
+  @apply mb-5 text-base leading-7 text-gray-700;
+}
+.custom-prose p + h2,
+.custom-prose ol + h2,
+.custom-prose ul + h2 {
+  @apply pt-10;
+}
+.custom-prose ol {
+  @apply mb-5 list-disc pl-4;
+}
+.custom-prose ul {
+  @apply mb-5 list-disc pl-4;
+}
+.custom-prose li {
+  @apply mb-2 text-base font-normal leading-8 text-gray-700;
+
+  &::marker {
+    @apply text-gray-600;
+  }
+}
+
+/* ui */
+.sidebar-button {
+  @apply -mx-2 rounded-md px-3.5 py-4 text-sm font-semibold text-gray-900 shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-200 print:m-0 print:hidden print:min-h-0;
+}
+
+/* utilities  */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
